@@ -7874,30 +7874,30 @@ class Subscriber(Entity):
                         
                         	**range:** 0..4294967295
                         
-                        .. attribute:: slave_recv_entry
+                        .. attribute:: subordinate_recv_entry
                         
-                        	Slave Recieved Sync
+                        	Subordinate Recieved Sync
                         	**type**\: int
                         
                         	**range:** 0..4294967295
                         
-                        .. attribute:: slave_decode_fail
+                        .. attribute:: subordinate_decode_fail
                         
-                        	Decode failed on Slave
+                        	Decode failed on Subordinate
                         	**type**\: int
                         
                         	**range:** 0..4294967295
                         
-                        .. attribute:: slave_create_update
+                        .. attribute:: subordinate_create_update
                         
-                        	Create Update received on slave
+                        	Create Update received on subordinate
                         	**type**\: int
                         
                         	**range:** 0..4294967295
                         
-                        .. attribute:: slave_delete
+                        .. attribute:: subordinate_delete
                         
-                        	Delete received on slave
+                        	Delete received on subordinate
                         	**type**\: int
                         
                         	**range:** 0..4294967295
@@ -8016,7 +8016,7 @@ class Subscriber(Entity):
                         
                         .. attribute:: txlist_remove_all_internal_error
                         
-                        	Number of Internal errors upon Master Txlist remove all call
+                        	Number of Internal errors upon Main Txlist remove all call
                         	**type**\: int
                         
                         	**range:** 0..4294967295
@@ -8117,16 +8117,16 @@ class Subscriber(Entity):
                         
                         	**range:** 0..4294967295
                         
-                        .. attribute:: total_srg_not_master
+                        .. attribute:: total_srg_not_main
                         
-                        	Total No of times SRG Not Master
+                        	Total No of times SRG Not Main
                         	**type**\: int
                         
                         	**range:** 0..4294967295
                         
-                        .. attribute:: total_master_eoms_pending
+                        .. attribute:: total_main_eoms_pending
                         
-                        	Total No of times Master EOMS Pending
+                        	Total No of times Main EOMS Pending
                         	**type**\: int
                         
                         	**range:** 0..4294967295
@@ -8188,10 +8188,10 @@ class Subscriber(Entity):
                                 ('delete_encode', YLeaf(YType.uint32, 'delete-encode')),
                                 ('create_upd_clean_callback', YLeaf(YType.uint32, 'create-upd-clean-callback')),
                                 ('delete_clean_callback', YLeaf(YType.uint32, 'delete-clean-callback')),
-                                ('slave_recv_entry', YLeaf(YType.uint32, 'slave-recv-entry')),
-                                ('slave_decode_fail', YLeaf(YType.uint32, 'slave-decode-fail')),
-                                ('slave_create_update', YLeaf(YType.uint32, 'slave-create-update')),
-                                ('slave_delete', YLeaf(YType.uint32, 'slave-delete')),
+                                ('subordinate_recv_entry', YLeaf(YType.uint32, 'subordinate-recv-entry')),
+                                ('subordinate_decode_fail', YLeaf(YType.uint32, 'subordinate-decode-fail')),
+                                ('subordinate_create_update', YLeaf(YType.uint32, 'subordinate-create-update')),
+                                ('subordinate_delete', YLeaf(YType.uint32, 'subordinate-delete')),
                                 ('srg_context_malloc', YLeaf(YType.uint32, 'srg-context-malloc')),
                                 ('srg_context_free', YLeaf(YType.uint32, 'srg-context-free')),
                                 ('sod_count', YLeaf(YType.uint32, 'sod-count')),
@@ -8223,8 +8223,8 @@ class Subscriber(Entity):
                                 ('total_pause_count', YLeaf(YType.uint32, 'total-pause-count')),
                                 ('total_resume_count', YLeaf(YType.uint32, 'total-resume-count')),
                                 ('total_dont_send_to_txlist', YLeaf(YType.uint32, 'total-dont-send-to-txlist')),
-                                ('total_srg_not_master', YLeaf(YType.uint32, 'total-srg-not-master')),
-                                ('total_master_eoms_pending', YLeaf(YType.uint32, 'total-master-eoms-pending')),
+                                ('total_srg_not_main', YLeaf(YType.uint32, 'total-srg-not-main')),
+                                ('total_main_eoms_pending', YLeaf(YType.uint32, 'total-main-eoms-pending')),
                                 ('last_pause_period', YLeaf(YType.uint64, 'last-pause-period')),
                                 ('total_pause_time', YLeaf(YType.uint64, 'total-pause-time')),
                                 ('last_pause_time', YLeaf(YType.uint64, 'last-pause-time')),
@@ -8241,10 +8241,10 @@ class Subscriber(Entity):
                             self.delete_encode = None
                             self.create_upd_clean_callback = None
                             self.delete_clean_callback = None
-                            self.slave_recv_entry = None
-                            self.slave_decode_fail = None
-                            self.slave_create_update = None
-                            self.slave_delete = None
+                            self.subordinate_recv_entry = None
+                            self.subordinate_decode_fail = None
+                            self.subordinate_create_update = None
+                            self.subordinate_delete = None
                             self.srg_context_malloc = None
                             self.srg_context_free = None
                             self.sod_count = None
@@ -8276,8 +8276,8 @@ class Subscriber(Entity):
                             self.total_pause_count = None
                             self.total_resume_count = None
                             self.total_dont_send_to_txlist = None
-                            self.total_srg_not_master = None
-                            self.total_master_eoms_pending = None
+                            self.total_srg_not_main = None
+                            self.total_main_eoms_pending = None
                             self.last_pause_period = None
                             self.total_pause_time = None
                             self.last_pause_time = None
@@ -8285,7 +8285,7 @@ class Subscriber(Entity):
                             self._segment_path = lambda: "srg"
 
                         def __setattr__(self, name, value):
-                            self._perform_setattr(Subscriber.Manager.Nodes.Node.Statistics.Srg, ['txlist_send_triggered', 'txlist_send_failed', 'txlist_send_failed_notactive', 'actual_txlist_sent', 'alreadyin_txlist', 'txlist_encode', 'txlist_encode_fail', 'create_update_encode', 'delete_encode', 'create_upd_clean_callback', 'delete_clean_callback', 'slave_recv_entry', 'slave_decode_fail', 'slave_create_update', 'slave_delete', 'srg_context_malloc', 'srg_context_free', 'sod_count', 'eod_count', 'sod_eod_replay_req_count', 'sod_eod_dirty_mark_count', 'sod_eod_dirty_delete_count', 'ack_to_srg', 'nack_to_srg', 'nack_to_srg_fail_cnt', 'txlist_remove_all', 'txlist_del_sync', 'txlist_del_sync_notlinked', 'txlist_del_app', 'txlist_del_app_notlinked', 'txlist_clean_invalid_state', 'txlist_remove_all_internal_error', 'is_srg_flow_control_enabled', 'max_inflight_sessoin_count', 'flow_control_resume_threshold', 'inflight_session_count', 'inflight_add_count', 'inflight_under_run_count', 'inflight_alloc_fails', 'inflight_insert_failures', 'inflight_deletes', 'inflight_not_found', 'inflight_delete_failures', 'total_pause_count', 'total_resume_count', 'total_dont_send_to_txlist', 'total_srg_not_master', 'total_master_eoms_pending', 'last_pause_period', 'total_pause_time', 'last_pause_time', 'last_resume_time'], name, value)
+                            self._perform_setattr(Subscriber.Manager.Nodes.Node.Statistics.Srg, ['txlist_send_triggered', 'txlist_send_failed', 'txlist_send_failed_notactive', 'actual_txlist_sent', 'alreadyin_txlist', 'txlist_encode', 'txlist_encode_fail', 'create_update_encode', 'delete_encode', 'create_upd_clean_callback', 'delete_clean_callback', 'subordinate_recv_entry', 'subordinate_decode_fail', 'subordinate_create_update', 'subordinate_delete', 'srg_context_malloc', 'srg_context_free', 'sod_count', 'eod_count', 'sod_eod_replay_req_count', 'sod_eod_dirty_mark_count', 'sod_eod_dirty_delete_count', 'ack_to_srg', 'nack_to_srg', 'nack_to_srg_fail_cnt', 'txlist_remove_all', 'txlist_del_sync', 'txlist_del_sync_notlinked', 'txlist_del_app', 'txlist_del_app_notlinked', 'txlist_clean_invalid_state', 'txlist_remove_all_internal_error', 'is_srg_flow_control_enabled', 'max_inflight_sessoin_count', 'flow_control_resume_threshold', 'inflight_session_count', 'inflight_add_count', 'inflight_under_run_count', 'inflight_alloc_fails', 'inflight_insert_failures', 'inflight_deletes', 'inflight_not_found', 'inflight_delete_failures', 'total_pause_count', 'total_resume_count', 'total_dont_send_to_txlist', 'total_srg_not_main', 'total_main_eoms_pending', 'last_pause_period', 'total_pause_time', 'last_pause_time', 'last_resume_time'], name, value)
 
 
     class Session(Entity):

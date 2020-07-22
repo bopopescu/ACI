@@ -170,7 +170,7 @@ class Hsrp(Entity):
             
             .. attribute:: mac_refresh
             
-            	HSRP MGO slave MAC refresh rate
+            	HSRP MGO subordinate MAC refresh rate
             	**type**\: int
             
             	**range:** 0..10000
@@ -249,10 +249,10 @@ class Hsrp(Entity):
                 	Version 2 HSRP configuration
                 	**type**\:  :py:class:`Version2 <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv6.Version2>`
                 
-                .. attribute:: slave_groups
+                .. attribute:: subordinate_groups
                 
-                	The HSRP slave group configuration table
-                	**type**\:  :py:class:`SlaveGroups <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv6.SlaveGroups>`
+                	The HSRP subordinate group configuration table
+                	**type**\:  :py:class:`SubordinateGroups <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups>`
                 
                 
 
@@ -269,7 +269,7 @@ class Hsrp(Entity):
                     self.is_top_level_class = False
                     self.has_list_ancestor = True
                     self.ylist_key_names = []
-                    self._child_container_classes = OrderedDict([("version2", ("version2", Hsrp.Interfaces.Interface.Ipv6.Version2)), ("slave-groups", ("slave_groups", Hsrp.Interfaces.Interface.Ipv6.SlaveGroups))])
+                    self._child_container_classes = OrderedDict([("version2", ("version2", Hsrp.Interfaces.Interface.Ipv6.Version2)), ("subordinate-groups", ("subordinate_groups", Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups))])
                     self._child_list_classes = OrderedDict([])
                     self._leafs = OrderedDict()
 
@@ -278,10 +278,10 @@ class Hsrp(Entity):
                     self._children_name_map["version2"] = "version2"
                     self._children_yang_names.add("version2")
 
-                    self.slave_groups = Hsrp.Interfaces.Interface.Ipv6.SlaveGroups()
-                    self.slave_groups.parent = self
-                    self._children_name_map["slave_groups"] = "slave-groups"
-                    self._children_yang_names.add("slave-groups")
+                    self.subordinate_groups = Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups()
+                    self.subordinate_groups.parent = self
+                    self._children_name_map["subordinate_groups"] = "subordinate-groups"
+                    self._children_yang_names.add("subordinate-groups")
                     self._segment_path = lambda: "ipv6"
 
 
@@ -927,14 +927,14 @@ class Hsrp(Entity):
                                         self._perform_setattr(Hsrp.Interfaces.Interface.Ipv6.Version2.Groups.Group.GlobalIpv6Addresses.GlobalIpv6Address, ['address'], name, value)
 
 
-                class SlaveGroups(Entity):
+                class SubordinateGroups(Entity):
                     """
-                    The HSRP slave group configuration table
+                    The HSRP subordinate group configuration table
                     
-                    .. attribute:: slave_group
+                    .. attribute:: subordinate_group
                     
-                    	The HSRP slave group being configured
-                    	**type**\: list of  		 :py:class:`SlaveGroup <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup>`
+                    	The HSRP subordinate group being configured
+                    	**type**\: list of  		 :py:class:`SubordinateGroup <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup>`
                     
                     
 
@@ -944,29 +944,29 @@ class Hsrp(Entity):
                     _revision = '2017-10-04'
 
                     def __init__(self):
-                        super(Hsrp.Interfaces.Interface.Ipv6.SlaveGroups, self).__init__()
+                        super(Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups, self).__init__()
 
-                        self.yang_name = "slave-groups"
+                        self.yang_name = "subordinate-groups"
                         self.yang_parent_name = "ipv6"
                         self.is_top_level_class = False
                         self.has_list_ancestor = True
                         self.ylist_key_names = []
                         self._child_container_classes = OrderedDict([])
-                        self._child_list_classes = OrderedDict([("slave-group", ("slave_group", Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup))])
+                        self._child_list_classes = OrderedDict([("subordinate-group", ("subordinate_group", Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup))])
                         self._leafs = OrderedDict()
 
-                        self.slave_group = YList(self)
-                        self._segment_path = lambda: "slave-groups"
+                        self.subordinate_group = YList(self)
+                        self._segment_path = lambda: "subordinate-groups"
 
                     def __setattr__(self, name, value):
-                        self._perform_setattr(Hsrp.Interfaces.Interface.Ipv6.SlaveGroups, [], name, value)
+                        self._perform_setattr(Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups, [], name, value)
 
 
-                    class SlaveGroup(Entity):
+                    class SubordinateGroup(Entity):
                         """
-                        The HSRP slave group being configured
+                        The HSRP subordinate group being configured
                         
-                        .. attribute:: slave_group_number  (key)
+                        .. attribute:: subordinate_group_number  (key)
                         
                         	HSRP group number
                         	**type**\: int
@@ -976,16 +976,16 @@ class Hsrp(Entity):
                         .. attribute:: link_local_ipv6_address
                         
                         	The HSRP IPv6 virtual linklocal address
-                        	**type**\:  :py:class:`LinkLocalIpv6Address <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.LinkLocalIpv6Address>`
+                        	**type**\:  :py:class:`LinkLocalIpv6Address <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.LinkLocalIpv6Address>`
                         
                         .. attribute:: global_ipv6_addresses
                         
                         	The table of HSRP virtual global IPv6 addresses
-                        	**type**\:  :py:class:`GlobalIpv6Addresses <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.GlobalIpv6Addresses>`
+                        	**type**\:  :py:class:`GlobalIpv6Addresses <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.GlobalIpv6Addresses>`
                         
                         .. attribute:: follow
                         
-                        	HSRP Group name for this slave to follow
+                        	HSRP Group name for this subordinate to follow
                         	**type**\: str
                         
                         .. attribute:: virtual_mac_address
@@ -1003,37 +1003,37 @@ class Hsrp(Entity):
                         _revision = '2017-10-04'
 
                         def __init__(self):
-                            super(Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup, self).__init__()
+                            super(Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup, self).__init__()
 
-                            self.yang_name = "slave-group"
-                            self.yang_parent_name = "slave-groups"
+                            self.yang_name = "subordinate-group"
+                            self.yang_parent_name = "subordinate-groups"
                             self.is_top_level_class = False
                             self.has_list_ancestor = True
-                            self.ylist_key_names = ['slave_group_number']
-                            self._child_container_classes = OrderedDict([("link-local-ipv6-address", ("link_local_ipv6_address", Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.LinkLocalIpv6Address)), ("global-ipv6-addresses", ("global_ipv6_addresses", Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.GlobalIpv6Addresses))])
+                            self.ylist_key_names = ['subordinate_group_number']
+                            self._child_container_classes = OrderedDict([("link-local-ipv6-address", ("link_local_ipv6_address", Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.LinkLocalIpv6Address)), ("global-ipv6-addresses", ("global_ipv6_addresses", Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.GlobalIpv6Addresses))])
                             self._child_list_classes = OrderedDict([])
                             self._leafs = OrderedDict([
-                                ('slave_group_number', YLeaf(YType.uint32, 'slave-group-number')),
+                                ('subordinate_group_number', YLeaf(YType.uint32, 'subordinate-group-number')),
                                 ('follow', YLeaf(YType.str, 'follow')),
                                 ('virtual_mac_address', YLeaf(YType.str, 'virtual-mac-address')),
                             ])
-                            self.slave_group_number = None
+                            self.subordinate_group_number = None
                             self.follow = None
                             self.virtual_mac_address = None
 
-                            self.link_local_ipv6_address = Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.LinkLocalIpv6Address()
+                            self.link_local_ipv6_address = Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.LinkLocalIpv6Address()
                             self.link_local_ipv6_address.parent = self
                             self._children_name_map["link_local_ipv6_address"] = "link-local-ipv6-address"
                             self._children_yang_names.add("link-local-ipv6-address")
 
-                            self.global_ipv6_addresses = Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.GlobalIpv6Addresses()
+                            self.global_ipv6_addresses = Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.GlobalIpv6Addresses()
                             self.global_ipv6_addresses.parent = self
                             self._children_name_map["global_ipv6_addresses"] = "global-ipv6-addresses"
                             self._children_yang_names.add("global-ipv6-addresses")
-                            self._segment_path = lambda: "slave-group" + "[slave-group-number='" + str(self.slave_group_number) + "']"
+                            self._segment_path = lambda: "subordinate-group" + "[subordinate-group-number='" + str(self.subordinate_group_number) + "']"
 
                         def __setattr__(self, name, value):
-                            self._perform_setattr(Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup, ['slave_group_number', 'follow', 'virtual_mac_address'], name, value)
+                            self._perform_setattr(Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup, ['subordinate_group_number', 'follow', 'virtual_mac_address'], name, value)
 
 
                         class LinkLocalIpv6Address(Entity):
@@ -1062,10 +1062,10 @@ class Hsrp(Entity):
                             _revision = '2017-10-04'
 
                             def __init__(self):
-                                super(Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.LinkLocalIpv6Address, self).__init__()
+                                super(Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.LinkLocalIpv6Address, self).__init__()
 
                                 self.yang_name = "link-local-ipv6-address"
-                                self.yang_parent_name = "slave-group"
+                                self.yang_parent_name = "subordinate-group"
                                 self.is_top_level_class = False
                                 self.has_list_ancestor = True
                                 self.ylist_key_names = []
@@ -1080,7 +1080,7 @@ class Hsrp(Entity):
                                 self._segment_path = lambda: "link-local-ipv6-address"
 
                             def __setattr__(self, name, value):
-                                self._perform_setattr(Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.LinkLocalIpv6Address, ['address', 'auto_configure'], name, value)
+                                self._perform_setattr(Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.LinkLocalIpv6Address, ['address', 'auto_configure'], name, value)
 
 
                         class GlobalIpv6Addresses(Entity):
@@ -1091,7 +1091,7 @@ class Hsrp(Entity):
                             .. attribute:: global_ipv6_address
                             
                             	A HSRP virtual global IPv6 IP address
-                            	**type**\: list of  		 :py:class:`GlobalIpv6Address <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.GlobalIpv6Addresses.GlobalIpv6Address>`
+                            	**type**\: list of  		 :py:class:`GlobalIpv6Address <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.GlobalIpv6Addresses.GlobalIpv6Address>`
                             
                             
 
@@ -1101,22 +1101,22 @@ class Hsrp(Entity):
                             _revision = '2017-10-04'
 
                             def __init__(self):
-                                super(Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.GlobalIpv6Addresses, self).__init__()
+                                super(Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.GlobalIpv6Addresses, self).__init__()
 
                                 self.yang_name = "global-ipv6-addresses"
-                                self.yang_parent_name = "slave-group"
+                                self.yang_parent_name = "subordinate-group"
                                 self.is_top_level_class = False
                                 self.has_list_ancestor = True
                                 self.ylist_key_names = []
                                 self._child_container_classes = OrderedDict([])
-                                self._child_list_classes = OrderedDict([("global-ipv6-address", ("global_ipv6_address", Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.GlobalIpv6Addresses.GlobalIpv6Address))])
+                                self._child_list_classes = OrderedDict([("global-ipv6-address", ("global_ipv6_address", Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.GlobalIpv6Addresses.GlobalIpv6Address))])
                                 self._leafs = OrderedDict()
 
                                 self.global_ipv6_address = YList(self)
                                 self._segment_path = lambda: "global-ipv6-addresses"
 
                             def __setattr__(self, name, value):
-                                self._perform_setattr(Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.GlobalIpv6Addresses, [], name, value)
+                                self._perform_setattr(Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.GlobalIpv6Addresses, [], name, value)
 
 
                             class GlobalIpv6Address(Entity):
@@ -1138,7 +1138,7 @@ class Hsrp(Entity):
                                 _revision = '2017-10-04'
 
                                 def __init__(self):
-                                    super(Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.GlobalIpv6Addresses.GlobalIpv6Address, self).__init__()
+                                    super(Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.GlobalIpv6Addresses.GlobalIpv6Address, self).__init__()
 
                                     self.yang_name = "global-ipv6-address"
                                     self.yang_parent_name = "global-ipv6-addresses"
@@ -1154,7 +1154,7 @@ class Hsrp(Entity):
                                     self._segment_path = lambda: "global-ipv6-address" + "[address='" + str(self.address) + "']"
 
                                 def __setattr__(self, name, value):
-                                    self._perform_setattr(Hsrp.Interfaces.Interface.Ipv6.SlaveGroups.SlaveGroup.GlobalIpv6Addresses.GlobalIpv6Address, ['address'], name, value)
+                                    self._perform_setattr(Hsrp.Interfaces.Interface.Ipv6.SubordinateGroups.SubordinateGroup.GlobalIpv6Addresses.GlobalIpv6Address, ['address'], name, value)
 
 
             class Bfd(Entity):
@@ -1268,10 +1268,10 @@ class Hsrp(Entity):
                 """
                 IPv4 HSRP configuration
                 
-                .. attribute:: slave_groups
+                .. attribute:: subordinate_groups
                 
-                	The HSRP slave group configuration table
-                	**type**\:  :py:class:`SlaveGroups <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv4.SlaveGroups>`
+                	The HSRP subordinate group configuration table
+                	**type**\:  :py:class:`SubordinateGroups <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups>`
                 
                 .. attribute:: version1
                 
@@ -1298,14 +1298,14 @@ class Hsrp(Entity):
                     self.is_top_level_class = False
                     self.has_list_ancestor = True
                     self.ylist_key_names = []
-                    self._child_container_classes = OrderedDict([("slave-groups", ("slave_groups", Hsrp.Interfaces.Interface.Ipv4.SlaveGroups)), ("version1", ("version1", Hsrp.Interfaces.Interface.Ipv4.Version1)), ("version2", ("version2", Hsrp.Interfaces.Interface.Ipv4.Version2))])
+                    self._child_container_classes = OrderedDict([("subordinate-groups", ("subordinate_groups", Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups)), ("version1", ("version1", Hsrp.Interfaces.Interface.Ipv4.Version1)), ("version2", ("version2", Hsrp.Interfaces.Interface.Ipv4.Version2))])
                     self._child_list_classes = OrderedDict([])
                     self._leafs = OrderedDict()
 
-                    self.slave_groups = Hsrp.Interfaces.Interface.Ipv4.SlaveGroups()
-                    self.slave_groups.parent = self
-                    self._children_name_map["slave_groups"] = "slave-groups"
-                    self._children_yang_names.add("slave-groups")
+                    self.subordinate_groups = Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups()
+                    self.subordinate_groups.parent = self
+                    self._children_name_map["subordinate_groups"] = "subordinate-groups"
+                    self._children_yang_names.add("subordinate-groups")
 
                     self.version1 = Hsrp.Interfaces.Interface.Ipv4.Version1()
                     self.version1.parent = self
@@ -1319,14 +1319,14 @@ class Hsrp(Entity):
                     self._segment_path = lambda: "ipv4"
 
 
-                class SlaveGroups(Entity):
+                class SubordinateGroups(Entity):
                     """
-                    The HSRP slave group configuration table
+                    The HSRP subordinate group configuration table
                     
-                    .. attribute:: slave_group
+                    .. attribute:: subordinate_group
                     
-                    	The HSRP slave group being configured
-                    	**type**\: list of  		 :py:class:`SlaveGroup <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup>`
+                    	The HSRP subordinate group being configured
+                    	**type**\: list of  		 :py:class:`SubordinateGroup <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup>`
                     
                     
 
@@ -1336,29 +1336,29 @@ class Hsrp(Entity):
                     _revision = '2017-10-04'
 
                     def __init__(self):
-                        super(Hsrp.Interfaces.Interface.Ipv4.SlaveGroups, self).__init__()
+                        super(Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups, self).__init__()
 
-                        self.yang_name = "slave-groups"
+                        self.yang_name = "subordinate-groups"
                         self.yang_parent_name = "ipv4"
                         self.is_top_level_class = False
                         self.has_list_ancestor = True
                         self.ylist_key_names = []
                         self._child_container_classes = OrderedDict([])
-                        self._child_list_classes = OrderedDict([("slave-group", ("slave_group", Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup))])
+                        self._child_list_classes = OrderedDict([("subordinate-group", ("subordinate_group", Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup))])
                         self._leafs = OrderedDict()
 
-                        self.slave_group = YList(self)
-                        self._segment_path = lambda: "slave-groups"
+                        self.subordinate_group = YList(self)
+                        self._segment_path = lambda: "subordinate-groups"
 
                     def __setattr__(self, name, value):
-                        self._perform_setattr(Hsrp.Interfaces.Interface.Ipv4.SlaveGroups, [], name, value)
+                        self._perform_setattr(Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups, [], name, value)
 
 
-                    class SlaveGroup(Entity):
+                    class SubordinateGroup(Entity):
                         """
-                        The HSRP slave group being configured
+                        The HSRP subordinate group being configured
                         
-                        .. attribute:: slave_group_number  (key)
+                        .. attribute:: subordinate_group_number  (key)
                         
                         	HSRP group number
                         	**type**\: int
@@ -1368,11 +1368,11 @@ class Hsrp(Entity):
                         .. attribute:: secondary_ipv4_addresses
                         
                         	Secondary HSRP IP address Table
-                        	**type**\:  :py:class:`SecondaryIpv4Addresses <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup.SecondaryIpv4Addresses>`
+                        	**type**\:  :py:class:`SecondaryIpv4Addresses <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup.SecondaryIpv4Addresses>`
                         
                         .. attribute:: follow
                         
-                        	HSRP Group name for this slave to follow
+                        	HSRP Group name for this subordinate to follow
                         	**type**\: str
                         
                         .. attribute:: virtual_mac_address
@@ -1397,34 +1397,34 @@ class Hsrp(Entity):
                         _revision = '2017-10-04'
 
                         def __init__(self):
-                            super(Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup, self).__init__()
+                            super(Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup, self).__init__()
 
-                            self.yang_name = "slave-group"
-                            self.yang_parent_name = "slave-groups"
+                            self.yang_name = "subordinate-group"
+                            self.yang_parent_name = "subordinate-groups"
                             self.is_top_level_class = False
                             self.has_list_ancestor = True
-                            self.ylist_key_names = ['slave_group_number']
-                            self._child_container_classes = OrderedDict([("secondary-ipv4-addresses", ("secondary_ipv4_addresses", Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup.SecondaryIpv4Addresses))])
+                            self.ylist_key_names = ['subordinate_group_number']
+                            self._child_container_classes = OrderedDict([("secondary-ipv4-addresses", ("secondary_ipv4_addresses", Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup.SecondaryIpv4Addresses))])
                             self._child_list_classes = OrderedDict([])
                             self._leafs = OrderedDict([
-                                ('slave_group_number', YLeaf(YType.uint32, 'slave-group-number')),
+                                ('subordinate_group_number', YLeaf(YType.uint32, 'subordinate-group-number')),
                                 ('follow', YLeaf(YType.str, 'follow')),
                                 ('virtual_mac_address', YLeaf(YType.str, 'virtual-mac-address')),
                                 ('primary_ipv4_address', YLeaf(YType.str, 'primary-ipv4-address')),
                             ])
-                            self.slave_group_number = None
+                            self.subordinate_group_number = None
                             self.follow = None
                             self.virtual_mac_address = None
                             self.primary_ipv4_address = None
 
-                            self.secondary_ipv4_addresses = Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup.SecondaryIpv4Addresses()
+                            self.secondary_ipv4_addresses = Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup.SecondaryIpv4Addresses()
                             self.secondary_ipv4_addresses.parent = self
                             self._children_name_map["secondary_ipv4_addresses"] = "secondary-ipv4-addresses"
                             self._children_yang_names.add("secondary-ipv4-addresses")
-                            self._segment_path = lambda: "slave-group" + "[slave-group-number='" + str(self.slave_group_number) + "']"
+                            self._segment_path = lambda: "subordinate-group" + "[subordinate-group-number='" + str(self.subordinate_group_number) + "']"
 
                         def __setattr__(self, name, value):
-                            self._perform_setattr(Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup, ['slave_group_number', 'follow', 'virtual_mac_address', 'primary_ipv4_address'], name, value)
+                            self._perform_setattr(Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup, ['subordinate_group_number', 'follow', 'virtual_mac_address', 'primary_ipv4_address'], name, value)
 
 
                         class SecondaryIpv4Addresses(Entity):
@@ -1434,7 +1434,7 @@ class Hsrp(Entity):
                             .. attribute:: secondary_ipv4_address
                             
                             	Secondary HSRP IP address
-                            	**type**\: list of  		 :py:class:`SecondaryIpv4Address <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup.SecondaryIpv4Addresses.SecondaryIpv4Address>`
+                            	**type**\: list of  		 :py:class:`SecondaryIpv4Address <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_cfg.Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup.SecondaryIpv4Addresses.SecondaryIpv4Address>`
                             
                             
 
@@ -1444,22 +1444,22 @@ class Hsrp(Entity):
                             _revision = '2017-10-04'
 
                             def __init__(self):
-                                super(Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup.SecondaryIpv4Addresses, self).__init__()
+                                super(Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup.SecondaryIpv4Addresses, self).__init__()
 
                                 self.yang_name = "secondary-ipv4-addresses"
-                                self.yang_parent_name = "slave-group"
+                                self.yang_parent_name = "subordinate-group"
                                 self.is_top_level_class = False
                                 self.has_list_ancestor = True
                                 self.ylist_key_names = []
                                 self._child_container_classes = OrderedDict([])
-                                self._child_list_classes = OrderedDict([("secondary-ipv4-address", ("secondary_ipv4_address", Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup.SecondaryIpv4Addresses.SecondaryIpv4Address))])
+                                self._child_list_classes = OrderedDict([("secondary-ipv4-address", ("secondary_ipv4_address", Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup.SecondaryIpv4Addresses.SecondaryIpv4Address))])
                                 self._leafs = OrderedDict()
 
                                 self.secondary_ipv4_address = YList(self)
                                 self._segment_path = lambda: "secondary-ipv4-addresses"
 
                             def __setattr__(self, name, value):
-                                self._perform_setattr(Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup.SecondaryIpv4Addresses, [], name, value)
+                                self._perform_setattr(Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup.SecondaryIpv4Addresses, [], name, value)
 
 
                             class SecondaryIpv4Address(Entity):
@@ -1481,7 +1481,7 @@ class Hsrp(Entity):
                                 _revision = '2017-10-04'
 
                                 def __init__(self):
-                                    super(Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup.SecondaryIpv4Addresses.SecondaryIpv4Address, self).__init__()
+                                    super(Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup.SecondaryIpv4Addresses.SecondaryIpv4Address, self).__init__()
 
                                     self.yang_name = "secondary-ipv4-address"
                                     self.yang_parent_name = "secondary-ipv4-addresses"
@@ -1497,7 +1497,7 @@ class Hsrp(Entity):
                                     self._segment_path = lambda: "secondary-ipv4-address" + "[address='" + str(self.address) + "']"
 
                                 def __setattr__(self, name, value):
-                                    self._perform_setattr(Hsrp.Interfaces.Interface.Ipv4.SlaveGroups.SlaveGroup.SecondaryIpv4Addresses.SecondaryIpv4Address, ['address'], name, value)
+                                    self._perform_setattr(Hsrp.Interfaces.Interface.Ipv4.SubordinateGroups.SubordinateGroup.SecondaryIpv4Addresses.SecondaryIpv4Address, ['address'], name, value)
 
 
                 class Version1(Entity):

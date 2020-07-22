@@ -16,14 +16,14 @@ from ydk.errors.error_handler import handle_type_error as _handle_type_error
 
 
 
-class MasterKeyAdd(Entity):
+class MainKeyAdd(Entity):
     """
-    To add a new master key
+    To add a new main key
     
     .. attribute:: input
     
     	
-    	**type**\:  :py:class:`Input <ydk.models.cisco_ios_xr.Cisco_IOS_XR_lib_keychain_act.MasterKeyAdd.Input>`
+    	**type**\:  :py:class:`Input <ydk.models.cisco_ios_xr.Cisco_IOS_XR_lib_keychain_act.MainKeyAdd.Input>`
     
     
 
@@ -33,10 +33,10 @@ class MasterKeyAdd(Entity):
     _revision = '2017-04-17'
 
     def __init__(self):
-        super(MasterKeyAdd, self).__init__()
+        super(MainKeyAdd, self).__init__()
         self._top_entity = None
 
-        self.yang_name = "master-key-add"
+        self.yang_name = "main-key-add"
         self.yang_parent_name = "Cisco-IOS-XR-lib-keychain-act"
         self.is_top_level_class = True
         self.has_list_ancestor = False
@@ -45,11 +45,11 @@ class MasterKeyAdd(Entity):
         self._child_list_classes = OrderedDict([])
         self._leafs = OrderedDict()
 
-        self.input = MasterKeyAdd.Input()
+        self.input = MainKeyAdd.Input()
         self.input.parent = self
         self._children_name_map["input"] = "input"
         self._children_yang_names.add("input")
-        self._segment_path = lambda: "Cisco-IOS-XR-lib-keychain-act:master-key-add"
+        self._segment_path = lambda: "Cisco-IOS-XR-lib-keychain-act:main-key-add"
 
 
     class Input(Entity):
@@ -58,7 +58,7 @@ class MasterKeyAdd(Entity):
         
         .. attribute:: new_key
         
-        	New master key to be added
+        	New main key to be added
         	**type**\: str
         
         
@@ -69,10 +69,10 @@ class MasterKeyAdd(Entity):
         _revision = '2017-04-17'
 
         def __init__(self):
-            super(MasterKeyAdd.Input, self).__init__()
+            super(MainKeyAdd.Input, self).__init__()
 
             self.yang_name = "input"
-            self.yang_parent_name = "master-key-add"
+            self.yang_parent_name = "main-key-add"
             self.is_top_level_class = False
             self.has_list_ancestor = False
             self.ylist_key_names = []
@@ -83,18 +83,18 @@ class MasterKeyAdd(Entity):
             ])
             self.new_key = None
             self._segment_path = lambda: "input"
-            self._absolute_path = lambda: "Cisco-IOS-XR-lib-keychain-act:master-key-add/%s" % self._segment_path()
+            self._absolute_path = lambda: "Cisco-IOS-XR-lib-keychain-act:main-key-add/%s" % self._segment_path()
 
         def __setattr__(self, name, value):
-            self._perform_setattr(MasterKeyAdd.Input, ['new_key'], name, value)
+            self._perform_setattr(MainKeyAdd.Input, ['new_key'], name, value)
 
     def clone_ptr(self):
-        self._top_entity = MasterKeyAdd()
+        self._top_entity = MainKeyAdd()
         return self._top_entity
 
-class MasterKeyDelete(Entity):
+class MainKeyDelete(Entity):
     """
-    Remove Master key
+    Remove Main key
     
     
 
@@ -104,10 +104,10 @@ class MasterKeyDelete(Entity):
     _revision = '2017-04-17'
 
     def __init__(self):
-        super(MasterKeyDelete, self).__init__()
+        super(MainKeyDelete, self).__init__()
         self._top_entity = None
 
-        self.yang_name = "master-key-delete"
+        self.yang_name = "main-key-delete"
         self.yang_parent_name = "Cisco-IOS-XR-lib-keychain-act"
         self.is_top_level_class = True
         self.has_list_ancestor = False
@@ -115,20 +115,20 @@ class MasterKeyDelete(Entity):
         self._child_container_classes = OrderedDict([])
         self._child_list_classes = OrderedDict([])
         self._leafs = OrderedDict()
-        self._segment_path = lambda: "Cisco-IOS-XR-lib-keychain-act:master-key-delete"
+        self._segment_path = lambda: "Cisco-IOS-XR-lib-keychain-act:main-key-delete"
 
     def clone_ptr(self):
-        self._top_entity = MasterKeyDelete()
+        self._top_entity = MainKeyDelete()
         return self._top_entity
 
-class MasterKeyUpdate(Entity):
+class MainKeyUpdate(Entity):
     """
-    To update master key
+    To update main key
     
     .. attribute:: input
     
     	
-    	**type**\:  :py:class:`Input <ydk.models.cisco_ios_xr.Cisco_IOS_XR_lib_keychain_act.MasterKeyUpdate.Input>`
+    	**type**\:  :py:class:`Input <ydk.models.cisco_ios_xr.Cisco_IOS_XR_lib_keychain_act.MainKeyUpdate.Input>`
     
     
 
@@ -138,10 +138,10 @@ class MasterKeyUpdate(Entity):
     _revision = '2017-04-17'
 
     def __init__(self):
-        super(MasterKeyUpdate, self).__init__()
+        super(MainKeyUpdate, self).__init__()
         self._top_entity = None
 
-        self.yang_name = "master-key-update"
+        self.yang_name = "main-key-update"
         self.yang_parent_name = "Cisco-IOS-XR-lib-keychain-act"
         self.is_top_level_class = True
         self.has_list_ancestor = False
@@ -150,11 +150,11 @@ class MasterKeyUpdate(Entity):
         self._child_list_classes = OrderedDict([])
         self._leafs = OrderedDict()
 
-        self.input = MasterKeyUpdate.Input()
+        self.input = MainKeyUpdate.Input()
         self.input.parent = self
         self._children_name_map["input"] = "input"
         self._children_yang_names.add("input")
-        self._segment_path = lambda: "Cisco-IOS-XR-lib-keychain-act:master-key-update"
+        self._segment_path = lambda: "Cisco-IOS-XR-lib-keychain-act:main-key-update"
 
 
     class Input(Entity):
@@ -170,7 +170,7 @@ class MasterKeyUpdate(Entity):
         
         .. attribute:: new_key
         
-        	New master key to be added 
+        	New main key to be added 
         	**type**\: str
         
         	**mandatory**\: True
@@ -183,10 +183,10 @@ class MasterKeyUpdate(Entity):
         _revision = '2017-04-17'
 
         def __init__(self):
-            super(MasterKeyUpdate.Input, self).__init__()
+            super(MainKeyUpdate.Input, self).__init__()
 
             self.yang_name = "input"
-            self.yang_parent_name = "master-key-update"
+            self.yang_parent_name = "main-key-update"
             self.is_top_level_class = False
             self.has_list_ancestor = False
             self.ylist_key_names = []
@@ -199,12 +199,12 @@ class MasterKeyUpdate(Entity):
             self.old_key = None
             self.new_key = None
             self._segment_path = lambda: "input"
-            self._absolute_path = lambda: "Cisco-IOS-XR-lib-keychain-act:master-key-update/%s" % self._segment_path()
+            self._absolute_path = lambda: "Cisco-IOS-XR-lib-keychain-act:main-key-update/%s" % self._segment_path()
 
         def __setattr__(self, name, value):
-            self._perform_setattr(MasterKeyUpdate.Input, ['old_key', 'new_key'], name, value)
+            self._perform_setattr(MainKeyUpdate.Input, ['old_key', 'new_key'], name, value)
 
     def clone_ptr(self):
-        self._top_entity = MasterKeyUpdate()
+        self._top_entity = MainKeyUpdate()
         return self._top_entity
 

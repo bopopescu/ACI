@@ -180,9 +180,9 @@ class Ntp(Entity):
     
     	**range:** 0..4294967295
     
-    .. attribute:: master
+    .. attribute:: main
     
-    	Act as NTP master clock
+    	Act as NTP main clock
     	**type**\: int
     
     	**range:** 1..15
@@ -229,13 +229,13 @@ class Ntp(Entity):
         self.is_presence_container = True
         self._leafs = OrderedDict([
             ('max_associations', YLeaf(YType.uint32, 'max-associations')),
-            ('master', YLeaf(YType.uint32, 'master')),
+            ('main', YLeaf(YType.uint32, 'main')),
             ('broadcast_delay', YLeaf(YType.uint32, 'broadcast-delay')),
             ('log_internal_sync', YLeaf(YType.empty, 'log-internal-sync')),
             ('update_calendar', YLeaf(YType.empty, 'update-calendar')),
         ])
         self.max_associations = None
-        self.master = None
+        self.main = None
         self.broadcast_delay = None
         self.log_internal_sync = None
         self.update_calendar = None
@@ -285,7 +285,7 @@ class Ntp(Entity):
         self._segment_path = lambda: "Cisco-IOS-XR-ip-ntp-cfg:ntp"
 
     def __setattr__(self, name, value):
-        self._perform_setattr(Ntp, ['max_associations', 'master', 'broadcast_delay', 'log_internal_sync', 'update_calendar'], name, value)
+        self._perform_setattr(Ntp, ['max_associations', 'main', 'broadcast_delay', 'log_internal_sync', 'update_calendar'], name, value)
 
 
     class PeerVrfs(Entity):

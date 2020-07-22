@@ -145,21 +145,21 @@ class SrgShowImRole(Enum):
 
     	Not Determined
 
-    .. data:: master = 1
+    .. data:: main = 1
 
-    	Master Role
+    	Main Role
 
-    .. data:: slave = 2
+    .. data:: subordinate = 2
 
-    	Slave Role
+    	Subordinate Role
 
     """
 
     none = Enum.YLeaf(0, "none")
 
-    master = Enum.YLeaf(1, "master")
+    main = Enum.YLeaf(1, "main")
 
-    slave = Enum.YLeaf(2, "slave")
+    subordinate = Enum.YLeaf(2, "subordinate")
 
 
 class SrgShowRole(Enum):
@@ -172,21 +172,21 @@ class SrgShowRole(Enum):
 
     	Not Configured
 
-    .. data:: master = 1
+    .. data:: main = 1
 
-    	Master Role
+    	Main Role
 
-    .. data:: slave = 2
+    .. data:: subordinate = 2
 
-    	Slave Role
+    	Subordinate Role
 
     """
 
     none = Enum.YLeaf(0, "none")
 
-    master = Enum.YLeaf(1, "master")
+    main = Enum.YLeaf(1, "main")
 
-    slave = Enum.YLeaf(2, "slave")
+    subordinate = Enum.YLeaf(2, "subordinate")
 
 
 class SrgShowSessionError(Enum):
@@ -249,11 +249,11 @@ class SrgShowSessionOperation(Enum):
     in_sync = Enum.YLeaf(3, "in-sync")
 
 
-class SrgShowSlaveMode(Enum):
+class SrgShowSubordinateMode(Enum):
     """
-    SrgShowSlaveMode (Enum Class)
+    SrgShowSubordinateMode (Enum Class)
 
-    SRG Slave Mode
+    SRG Subordinate Mode
 
     .. data:: none = 0
 
@@ -473,10 +473,10 @@ class SubscriberRedundancyManager(Entity):
             	Preferred Role
             	**type**\:  :py:class:`SrgShowRole <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowRole>`
             
-            .. attribute:: slave_mode
+            .. attribute:: subordinate_mode
             
-            	Slave Mode
-            	**type**\:  :py:class:`SrgShowSlaveMode <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowSlaveMode>`
+            	Subordinate Mode
+            	**type**\:  :py:class:`SrgShowSubordinateMode <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowSubordinateMode>`
             
             .. attribute:: object_tracking_status
             
@@ -525,7 +525,7 @@ class SubscriberRedundancyManager(Entity):
                     ('peer_ipv6_address', YLeaf(YType.str, 'peer-ipv6-address')),
                     ('interface_count', YLeaf(YType.uint32, 'interface-count')),
                     ('preferred_role', YLeaf(YType.enumeration, 'preferred-role')),
-                    ('slave_mode', YLeaf(YType.enumeration, 'slave-mode')),
+                    ('subordinate_mode', YLeaf(YType.enumeration, 'subordinate-mode')),
                     ('object_tracking_status', YLeaf(YType.boolean, 'object-tracking-status')),
                     ('virtual_mac_address', YLeaf(YType.str, 'virtual-mac-address')),
                     ('virtual_mac_address_disable', YLeaf(YType.boolean, 'virtual-mac-address-disable')),
@@ -540,7 +540,7 @@ class SubscriberRedundancyManager(Entity):
                 self.peer_ipv6_address = None
                 self.interface_count = None
                 self.preferred_role = None
-                self.slave_mode = None
+                self.subordinate_mode = None
                 self.object_tracking_status = None
                 self.virtual_mac_address = None
                 self.virtual_mac_address_disable = None
@@ -549,7 +549,7 @@ class SubscriberRedundancyManager(Entity):
                 self._absolute_path = lambda: "Cisco-IOS-XR-subscriber-srg-oper:subscriber-redundancy-manager/groups/%s" % self._segment_path()
 
             def __setattr__(self, name, value):
-                self._perform_setattr(SubscriberRedundancyManager.Groups.Group, ['group', 'group_id', 'description', 'disabled', 'role', 'peer_ipv4_address', 'peer_ipv6_address', 'interface_count', 'preferred_role', 'slave_mode', 'object_tracking_status', 'virtual_mac_address', 'virtual_mac_address_disable', 'node_name'], name, value)
+                self._perform_setattr(SubscriberRedundancyManager.Groups.Group, ['group', 'group_id', 'description', 'disabled', 'role', 'peer_ipv4_address', 'peer_ipv6_address', 'interface_count', 'preferred_role', 'subordinate_mode', 'object_tracking_status', 'virtual_mac_address', 'virtual_mac_address_disable', 'node_name'], name, value)
 
 
     class Summary(Entity):
@@ -571,10 +571,10 @@ class SubscriberRedundancyManager(Entity):
         	Preferred Role
         	**type**\:  :py:class:`SrgShowRole <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowRole>`
         
-        .. attribute:: slave_mode
+        .. attribute:: subordinate_mode
         
-        	Slave Mode
-        	**type**\:  :py:class:`SrgShowSlaveMode <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowSlaveMode>`
+        	Subordinate Mode
+        	**type**\:  :py:class:`SrgShowSubordinateMode <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowSubordinateMode>`
         
         .. attribute:: hold_timer
         
@@ -621,16 +621,16 @@ class SubscriberRedundancyManager(Entity):
         
         	**range:** 0..4294967295
         
-        .. attribute:: master_group_count
+        .. attribute:: main_group_count
         
-        	No. of Master/Active Groups
+        	No. of Main/Active Groups
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: slave_group_count
+        .. attribute:: subordinate_group_count
         
-        	No. of Slave Groups
+        	No. of Subordinate Groups
         	**type**\: int
         
         	**range:** 0..4294967295
@@ -642,16 +642,16 @@ class SubscriberRedundancyManager(Entity):
         
         	**range:** 0..4294967295
         
-        .. attribute:: master_interface_count
+        .. attribute:: main_interface_count
         
-        	No. of Master/Active Interfaces
+        	No. of Main/Active Interfaces
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: slave_interface_count
+        .. attribute:: subordinate_interface_count
         
-        	No. of Slave Interfaces
+        	No. of Subordinate Interfaces
         	**type**\: int
         
         	**range:** 0..4294967295
@@ -677,7 +677,7 @@ class SubscriberRedundancyManager(Entity):
                 ('disabled', YLeaf(YType.boolean, 'disabled')),
                 ('active_state', YLeaf(YType.boolean, 'active-state')),
                 ('preferred_role', YLeaf(YType.enumeration, 'preferred-role')),
-                ('slave_mode', YLeaf(YType.enumeration, 'slave-mode')),
+                ('subordinate_mode', YLeaf(YType.enumeration, 'subordinate-mode')),
                 ('hold_timer', YLeaf(YType.uint32, 'hold-timer')),
                 ('source_interface_name', YLeaf(YType.str, 'source-interface-name')),
                 ('vrf_name', YLeaf(YType.str, 'vrf-name')),
@@ -685,16 +685,16 @@ class SubscriberRedundancyManager(Entity):
                 ('source_interface_ipv6_address', YLeaf(YType.str, 'source-interface-ipv6-address')),
                 ('group_count', YLeaf(YType.uint32, 'group-count')),
                 ('disabled_group_count', YLeaf(YType.uint32, 'disabled-group-count')),
-                ('master_group_count', YLeaf(YType.uint32, 'master-group-count')),
-                ('slave_group_count', YLeaf(YType.uint32, 'slave-group-count')),
+                ('main_group_count', YLeaf(YType.uint32, 'main-group-count')),
+                ('subordinate_group_count', YLeaf(YType.uint32, 'subordinate-group-count')),
                 ('interface_count', YLeaf(YType.uint32, 'interface-count')),
-                ('master_interface_count', YLeaf(YType.uint32, 'master-interface-count')),
-                ('slave_interface_count', YLeaf(YType.uint32, 'slave-interface-count')),
+                ('main_interface_count', YLeaf(YType.uint32, 'main-interface-count')),
+                ('subordinate_interface_count', YLeaf(YType.uint32, 'subordinate-interface-count')),
             ])
             self.disabled = None
             self.active_state = None
             self.preferred_role = None
-            self.slave_mode = None
+            self.subordinate_mode = None
             self.hold_timer = None
             self.source_interface_name = None
             self.vrf_name = None
@@ -702,16 +702,16 @@ class SubscriberRedundancyManager(Entity):
             self.source_interface_ipv6_address = None
             self.group_count = None
             self.disabled_group_count = None
-            self.master_group_count = None
-            self.slave_group_count = None
+            self.main_group_count = None
+            self.subordinate_group_count = None
             self.interface_count = None
-            self.master_interface_count = None
-            self.slave_interface_count = None
+            self.main_interface_count = None
+            self.subordinate_interface_count = None
             self._segment_path = lambda: "summary"
             self._absolute_path = lambda: "Cisco-IOS-XR-subscriber-srg-oper:subscriber-redundancy-manager/%s" % self._segment_path()
 
         def __setattr__(self, name, value):
-            self._perform_setattr(SubscriberRedundancyManager.Summary, ['disabled', 'active_state', 'preferred_role', 'slave_mode', 'hold_timer', 'source_interface_name', 'vrf_name', 'source_interface_ipv4_address', 'source_interface_ipv6_address', 'group_count', 'disabled_group_count', 'master_group_count', 'slave_group_count', 'interface_count', 'master_interface_count', 'slave_interface_count'], name, value)
+            self._perform_setattr(SubscriberRedundancyManager.Summary, ['disabled', 'active_state', 'preferred_role', 'subordinate_mode', 'hold_timer', 'source_interface_name', 'vrf_name', 'source_interface_ipv4_address', 'source_interface_ipv6_address', 'group_count', 'disabled_group_count', 'main_group_count', 'subordinate_group_count', 'interface_count', 'main_interface_count', 'subordinate_interface_count'], name, value)
 
 
     class Interfaces(Entity):
@@ -1074,9 +1074,9 @@ class SubscriberRedundancyAgent(Entity):
                     
                     	**range:** 0..4294967295
                     
-                    .. attribute:: role_master
+                    .. attribute:: role_main
                     
-                    	Master Role is Set
+                    	Main Role is Set
                     	**type**\: bool
                     
                     .. attribute:: valid_mac_address
@@ -1125,7 +1125,7 @@ class SubscriberRedundancyAgent(Entity):
                             ('session_mac_address', YLeaf(YType.str, 'session-mac-address')),
                             ('pppoe_session_id', YLeaf(YType.uint16, 'pppoe-session-id')),
                             ('l2tp_tunnel_id', YLeaf(YType.uint32, 'l2tp-tunnel-id')),
-                            ('role_master', YLeaf(YType.boolean, 'role-master')),
+                            ('role_main', YLeaf(YType.boolean, 'role-main')),
                             ('valid_mac_address', YLeaf(YType.boolean, 'valid-mac-address')),
                             ('negative_acknowledgement_update_all', YLeaf(YType.boolean, 'negative-acknowledgement-update-all')),
                         ])
@@ -1137,7 +1137,7 @@ class SubscriberRedundancyAgent(Entity):
                         self.session_mac_address = None
                         self.pppoe_session_id = None
                         self.l2tp_tunnel_id = None
-                        self.role_master = None
+                        self.role_main = None
                         self.valid_mac_address = None
                         self.negative_acknowledgement_update_all = None
 
@@ -1146,7 +1146,7 @@ class SubscriberRedundancyAgent(Entity):
                         self._segment_path = lambda: "group-id" + "[group-id='" + str(self.group_id) + "']"
 
                     def __setattr__(self, name, value):
-                        self._perform_setattr(SubscriberRedundancyAgent.Nodes.Node.GroupIdXr.GroupId, ['group_id', 'group_id_xr', 'interface_name', 'outer_vlan', 'inner_vlan', 'session_mac_address', 'pppoe_session_id', 'l2tp_tunnel_id', 'role_master', 'valid_mac_address', 'negative_acknowledgement_update_all'], name, value)
+                        self._perform_setattr(SubscriberRedundancyAgent.Nodes.Node.GroupIdXr.GroupId, ['group_id', 'group_id_xr', 'interface_name', 'outer_vlan', 'inner_vlan', 'session_mac_address', 'pppoe_session_id', 'l2tp_tunnel_id', 'role_main', 'valid_mac_address', 'negative_acknowledgement_update_all'], name, value)
 
 
                     class SessionDetailedInformation(Entity):
@@ -1755,10 +1755,10 @@ class SubscriberRedundancyAgent(Entity):
                     	Preferred Role
                     	**type**\:  :py:class:`SrgShowRole <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowRole>`
                     
-                    .. attribute:: slave_mode
+                    .. attribute:: subordinate_mode
                     
-                    	Slave Mode
-                    	**type**\:  :py:class:`SrgShowSlaveMode <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowSlaveMode>`
+                    	Subordinate Mode
+                    	**type**\:  :py:class:`SrgShowSubordinateMode <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowSubordinateMode>`
                     
                     .. attribute:: object_tracking_status
                     
@@ -1812,7 +1812,7 @@ class SubscriberRedundancyAgent(Entity):
                             ('peer_ipv6_address', YLeaf(YType.str, 'peer-ipv6-address')),
                             ('peer_status', YLeaf(YType.enumeration, 'peer-status')),
                             ('preferred_role', YLeaf(YType.enumeration, 'preferred-role')),
-                            ('slave_mode', YLeaf(YType.enumeration, 'slave-mode')),
+                            ('subordinate_mode', YLeaf(YType.enumeration, 'subordinate-mode')),
                             ('object_tracking_status', YLeaf(YType.boolean, 'object-tracking-status')),
                             ('interface_count', YLeaf(YType.uint32, 'interface-count')),
                             ('session_count', YLeaf(YType.uint32, 'session-count')),
@@ -1826,7 +1826,7 @@ class SubscriberRedundancyAgent(Entity):
                         self.peer_ipv6_address = None
                         self.peer_status = None
                         self.preferred_role = None
-                        self.slave_mode = None
+                        self.subordinate_mode = None
                         self.object_tracking_status = None
                         self.interface_count = None
                         self.session_count = None
@@ -1834,7 +1834,7 @@ class SubscriberRedundancyAgent(Entity):
                         self._segment_path = lambda: "group-summary" + "[group-id='" + str(self.group_id) + "']"
 
                     def __setattr__(self, name, value):
-                        self._perform_setattr(SubscriberRedundancyAgent.Nodes.Node.GroupSummaries.GroupSummary, ['group_id', 'group_id_xr', 'role', 'disabled', 'peer_ipv4_address', 'peer_ipv6_address', 'peer_status', 'preferred_role', 'slave_mode', 'object_tracking_status', 'interface_count', 'session_count', 'pending_add_session_count'], name, value)
+                        self._perform_setattr(SubscriberRedundancyAgent.Nodes.Node.GroupSummaries.GroupSummary, ['group_id', 'group_id_xr', 'role', 'disabled', 'peer_ipv4_address', 'peer_ipv6_address', 'peer_status', 'preferred_role', 'subordinate_mode', 'object_tracking_status', 'interface_count', 'session_count', 'pending_add_session_count'], name, value)
 
 
             class GroupIds(Entity):
@@ -1915,10 +1915,10 @@ class SubscriberRedundancyAgent(Entity):
                     	Current Role
                     	**type**\:  :py:class:`SrgShowRole <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowRole>`
                     
-                    .. attribute:: slave_mode
+                    .. attribute:: subordinate_mode
                     
-                    	Slave Mode
-                    	**type**\:  :py:class:`SrgShowSlaveMode <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowSlaveMode>`
+                    	Subordinate Mode
+                    	**type**\:  :py:class:`SrgShowSubordinateMode <ydk.models.cisco_ios_xr.Cisco_IOS_XR_subscriber_srg_oper.SrgShowSubordinateMode>`
                     
                     .. attribute:: hold_timer
                     
@@ -2056,9 +2056,9 @@ class SubscriberRedundancyAgent(Entity):
                     
                     	**range:** 0..4294967295
                     
-                    .. attribute:: slave_update_failure_count
+                    .. attribute:: subordinate_update_failure_count
                     
-                    	Slave Session update fail count
+                    	Subordinate Session update fail count
                     	**type**\: int
                     
                     	**range:** 0..4294967295
@@ -2137,7 +2137,7 @@ class SubscriberRedundancyAgent(Entity):
                             ('init_role', YLeaf(YType.enumeration, 'init-role')),
                             ('negotiating_role', YLeaf(YType.enumeration, 'negotiating-role')),
                             ('current_role', YLeaf(YType.enumeration, 'current-role')),
-                            ('slave_mode', YLeaf(YType.enumeration, 'slave-mode')),
+                            ('subordinate_mode', YLeaf(YType.enumeration, 'subordinate-mode')),
                             ('hold_timer', YLeaf(YType.uint32, 'hold-timer')),
                             ('virtual_mac_address', YLeaf(YType.str, 'virtual-mac-address')),
                             ('virtual_mac_address_disable', YLeaf(YType.boolean, 'virtual-mac-address-disable')),
@@ -2162,7 +2162,7 @@ class SubscriberRedundancyAgent(Entity):
                             ('last_switchover_reason', YLeaf(YType.enumeration, 'last-switchover-reason')),
                             ('switchover_hold_time', YLeaf(YType.uint32, 'switchover-hold-time')),
                             ('session_count', YLeaf(YType.uint32, 'session-count')),
-                            ('slave_update_failure_count', YLeaf(YType.uint32, 'slave-update-failure-count')),
+                            ('subordinate_update_failure_count', YLeaf(YType.uint32, 'subordinate-update-failure-count')),
                             ('tunnel_count', YLeaf(YType.uint32, 'tunnel-count')),
                             ('pending_session_update_count', YLeaf(YType.uint32, 'pending-session-update-count')),
                             ('pending_session_delete_count', YLeaf(YType.uint32, 'pending-session-delete-count')),
@@ -2177,7 +2177,7 @@ class SubscriberRedundancyAgent(Entity):
                         self.init_role = None
                         self.negotiating_role = None
                         self.current_role = None
-                        self.slave_mode = None
+                        self.subordinate_mode = None
                         self.hold_timer = None
                         self.virtual_mac_address = None
                         self.virtual_mac_address_disable = None
@@ -2202,7 +2202,7 @@ class SubscriberRedundancyAgent(Entity):
                         self.last_switchover_reason = None
                         self.switchover_hold_time = None
                         self.session_count = None
-                        self.slave_update_failure_count = None
+                        self.subordinate_update_failure_count = None
                         self.tunnel_count = None
                         self.pending_session_update_count = None
                         self.pending_session_delete_count = None
@@ -2214,7 +2214,7 @@ class SubscriberRedundancyAgent(Entity):
                         self._segment_path = lambda: "group-id" + "[group-id='" + str(self.group_id) + "']"
 
                     def __setattr__(self, name, value):
-                        self._perform_setattr(SubscriberRedundancyAgent.Nodes.Node.GroupIds.GroupId, ['group_id', 'group_id_xr', 'description', 'disabled', 'init_role', 'negotiating_role', 'current_role', 'slave_mode', 'hold_timer', 'virtual_mac_address', 'virtual_mac_address_disable', 'l2tp_source_ip', 'core_tracking_object_name', 'core_tracking_object_status', 'access_tracking_object_name', 'access_tracking_object_status', 'object_tracking_status', 'peer_ipv4_address', 'peer_ipv6_address', 'peer_status', 'peer_last_negotiation_time', 'peer_last_up_time', 'peer_last_down_time', 'peer_init_role', 'peer_negotiating_role', 'peer_current_role', 'peer_object_tracking_status', 'last_switchover_time', 'switchover_count', 'last_switchover_reason', 'switchover_hold_time', 'session_count', 'slave_update_failure_count', 'tunnel_count', 'pending_session_update_count', 'pending_session_delete_count', 'interface_count', 'revertive_timer', 'switchover_revert_time'], name, value)
+                        self._perform_setattr(SubscriberRedundancyAgent.Nodes.Node.GroupIds.GroupId, ['group_id', 'group_id_xr', 'description', 'disabled', 'init_role', 'negotiating_role', 'current_role', 'subordinate_mode', 'hold_timer', 'virtual_mac_address', 'virtual_mac_address_disable', 'l2tp_source_ip', 'core_tracking_object_name', 'core_tracking_object_status', 'access_tracking_object_name', 'access_tracking_object_status', 'object_tracking_status', 'peer_ipv4_address', 'peer_ipv6_address', 'peer_status', 'peer_last_negotiation_time', 'peer_last_up_time', 'peer_last_down_time', 'peer_init_role', 'peer_negotiating_role', 'peer_current_role', 'peer_object_tracking_status', 'last_switchover_time', 'switchover_count', 'last_switchover_reason', 'switchover_hold_time', 'session_count', 'subordinate_update_failure_count', 'tunnel_count', 'pending_session_update_count', 'pending_session_delete_count', 'interface_count', 'revertive_timer', 'switchover_revert_time'], name, value)
 
 
                     class Interface(Entity):

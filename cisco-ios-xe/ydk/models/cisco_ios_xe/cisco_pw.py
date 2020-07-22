@@ -917,9 +917,9 @@ class PseudowireConfig(Entity):
                 
                 	**default value**\: false
                 
-                .. attribute:: redundancy_master
+                .. attribute:: redundancy_main
                 
-                	Make the PE as master to enables Pseudowire Preferential Forwarding feature to display the status of  the active and backup pseudowires
+                	Make the PE as main to enables Pseudowire Preferential Forwarding feature to display the status of  the active and backup pseudowires
                 	**type**\: bool
                 
                 	**default value**\: false
@@ -946,17 +946,17 @@ class PseudowireConfig(Entity):
                         ('disable', YLeaf(YType.boolean, 'disable')),
                         ('peer_topo_dual_homed', YLeaf(YType.boolean, 'peer-topo-dual-homed')),
                         ('route_watch_disable', YLeaf(YType.boolean, 'route-watch-disable')),
-                        ('redundancy_master', YLeaf(YType.boolean, 'redundancy-master')),
+                        ('redundancy_main', YLeaf(YType.boolean, 'redundancy-main')),
                     ])
                     self.decoupled = None
                     self.disable = None
                     self.peer_topo_dual_homed = None
                     self.route_watch_disable = None
-                    self.redundancy_master = None
+                    self.redundancy_main = None
                     self._segment_path = lambda: "status"
 
                 def __setattr__(self, name, value):
-                    self._perform_setattr(PseudowireConfig.PwTemplates.PwTemplate.Status, ['decoupled', 'disable', 'peer_topo_dual_homed', 'route_watch_disable', 'redundancy_master'], name, value)
+                    self._perform_setattr(PseudowireConfig.PwTemplates.PwTemplate.Status, ['decoupled', 'disable', 'peer_topo_dual_homed', 'route_watch_disable', 'redundancy_main'], name, value)
 
 
             class PortProfileSpec(Entity):

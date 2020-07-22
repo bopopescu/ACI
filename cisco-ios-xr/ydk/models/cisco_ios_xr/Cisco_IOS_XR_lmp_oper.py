@@ -3198,7 +3198,7 @@ class Lmp(Entity):
                     
                     .. attribute:: ipcc_state
                     
-                    	OLM IPCC master state
+                    	OLM IPCC main state
                     	**type**\:  :py:class:`OlmipccState <ydk.models.cisco_ios_xr.Cisco_IOS_XR_lmp_oper.OlmipccState>`
                     
                     .. attribute:: lmp_hello_interval

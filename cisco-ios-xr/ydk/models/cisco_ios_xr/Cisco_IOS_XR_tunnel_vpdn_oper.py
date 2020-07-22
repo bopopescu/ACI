@@ -700,9 +700,9 @@ class Vpdn(Entity):
                 
                 	**range:** 0..65535
                 
-                .. attribute:: srg_slave
+                .. attribute:: srg_subordinate
                 
-                	Session SRG Slave
+                	Session SRG Subordinate
                 	**type**\: bool
                 
                 
@@ -730,7 +730,7 @@ class Vpdn(Entity):
                         ('state', YLeaf(YType.enumeration, 'state')),
                         ('l2tp_session_id', YLeaf(YType.uint16, 'l2tp-session-id')),
                         ('l2tp_tunnel_id', YLeaf(YType.uint16, 'l2tp-tunnel-id')),
-                        ('srg_slave', YLeaf(YType.boolean, 'srg-slave')),
+                        ('srg_subordinate', YLeaf(YType.boolean, 'srg-subordinate')),
                     ])
                     self.last_change = None
                     self.interface_name = None
@@ -739,11 +739,11 @@ class Vpdn(Entity):
                     self.state = None
                     self.l2tp_session_id = None
                     self.l2tp_tunnel_id = None
-                    self.srg_slave = None
+                    self.srg_subordinate = None
                     self._segment_path = lambda: "session"
 
                 def __setattr__(self, name, value):
-                    self._perform_setattr(Vpdn.Sessions.Session.Session_, ['last_change', 'interface_name', 'username', 'domain_name', 'state', 'l2tp_session_id', 'l2tp_tunnel_id', 'srg_slave'], name, value)
+                    self._perform_setattr(Vpdn.Sessions.Session.Session_, ['last_change', 'interface_name', 'username', 'domain_name', 'state', 'l2tp_session_id', 'l2tp_tunnel_id', 'srg_subordinate'], name, value)
 
 
             class L2Tp(Entity):

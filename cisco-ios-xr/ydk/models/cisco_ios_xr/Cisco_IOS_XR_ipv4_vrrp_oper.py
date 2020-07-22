@@ -60,9 +60,9 @@ class VrrpBagProtocolState(Enum):
 
     	Backup
 
-    .. data:: state_master = 3
+    .. data:: state_main = 3
 
-    	Master
+    	Main
 
     """
 
@@ -70,7 +70,7 @@ class VrrpBagProtocolState(Enum):
 
     state_backup = Enum.YLeaf(2, "state-backup")
 
-    state_master = Enum.YLeaf(3, "state-master")
+    state_main = Enum.YLeaf(3, "state-main")
 
 
 class VrrpBfdSessionState(Enum):
@@ -167,11 +167,11 @@ class VrrpStateChangeReason(Enum):
 
     	Interface Down update
 
-    .. data:: state_change_master_down_timer = 7
+    .. data:: state_change_main_down_timer = 7
 
-    	Master down timer expired
+    	Main down timer expired
 
-    .. data:: state_change_higher_priority_master = 8
+    .. data:: state_change_higher_priority_main = 8
 
     	Higher priority advert received
 
@@ -207,9 +207,9 @@ class VrrpStateChangeReason(Enum):
 
     state_change_interface_down = Enum.YLeaf(6, "state-change-interface-down")
 
-    state_change_master_down_timer = Enum.YLeaf(7, "state-change-master-down-timer")
+    state_change_main_down_timer = Enum.YLeaf(7, "state-change-main-down-timer")
 
-    state_change_higher_priority_master = Enum.YLeaf(8, "state-change-higher-priority-master")
+    state_change_higher_priority_main = Enum.YLeaf(8, "state-change-higher-priority-main")
 
     state_change_fhrp_admin = Enum.YLeaf(9, "state-change-fhrp-admin")
 
@@ -345,14 +345,14 @@ class Vrrp(Entity):
         """
         VRRP summary statistics
         
-        .. attribute:: ipv4_sessions_master_owner
+        .. attribute:: ipv4_sessions_main_owner
         
         	Number of IPv4 sessions in MASTER (owner) state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_sessions_master
+        .. attribute:: ipv4_sessions_main
         
         	Number of IPv4 sessions in MASTER state
         	**type**\: int
@@ -373,49 +373,49 @@ class Vrrp(Entity):
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_slaves_master
+        .. attribute:: ipv4_subordinates_main
         
-        	Number of IPv4 slaves in MASTER state
+        	Number of IPv4 subordinates in MASTER state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_slaves_backup
+        .. attribute:: ipv4_subordinates_backup
         
-        	Number of IPv4 slaves in BACKUP state
+        	Number of IPv4 subordinates in BACKUP state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_slaves_init
+        .. attribute:: ipv4_subordinates_init
         
-        	Number of IPv4 slaves in INIT state
+        	Number of IPv4 subordinates in INIT state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_virtual_ip_addresses_master_owner_up
+        .. attribute:: ipv4_virtual_ip_addresses_main_owner_up
         
         	Number of UP IPv4 Virtual IP Addresses on virtual routers in MASTER (owner) state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_virtual_ip_addresses_master_owner_down
+        .. attribute:: ipv4_virtual_ip_addresses_main_owner_down
         
         	Number of DOWN IPv4 Virtual IP Addresses on virtual routers in MASTER (owner) state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_virtual_ip_addresses_master_up
+        .. attribute:: ipv4_virtual_ip_addresses_main_up
         
         	Number of UP IPv4 Virtual IP Addresses on virtual routers in MASTER state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_virtual_ip_addresses_master_down
+        .. attribute:: ipv4_virtual_ip_addresses_main_down
         
         	Number of DOWN IPv4 Virtual IP Addresses on virtual routers in MASTER state
         	**type**\: int
@@ -450,14 +450,14 @@ class Vrrp(Entity):
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_sessions_master_owner
+        .. attribute:: ipv6_sessions_main_owner
         
         	Number of IPv6 sessions in MASTER (owner) state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_sessions_master
+        .. attribute:: ipv6_sessions_main
         
         	Number of IPv6 sessions in MASTER state
         	**type**\: int
@@ -478,49 +478,49 @@ class Vrrp(Entity):
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_slaves_master
+        .. attribute:: ipv6_subordinates_main
         
-        	Number of IPv6 slaves in MASTER state
+        	Number of IPv6 subordinates in MASTER state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_slaves_backup
+        .. attribute:: ipv6_subordinates_backup
         
-        	Number of IPv6 slaves in BACKUP state
+        	Number of IPv6 subordinates in BACKUP state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_slaves_init
+        .. attribute:: ipv6_subordinates_init
         
-        	Number of IPv6 slaves in INIT state
+        	Number of IPv6 subordinates in INIT state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_virtual_ip_addresses_master_owner_up
+        .. attribute:: ipv6_virtual_ip_addresses_main_owner_up
         
         	Number of UP IPv6 Virtual IP Addresses on virtual routers in MASTER (owner) state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_virtual_ip_addresses_master_owner_down
+        .. attribute:: ipv6_virtual_ip_addresses_main_owner_down
         
         	Number of DOWN IPv6 Virtual IP Addresses on virtual routers in MASTER (owner) state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_virtual_ip_addresses_master_up
+        .. attribute:: ipv6_virtual_ip_addresses_main_up
         
         	Number of UP IPv6 Virtual IP Addresses on virtual routers in MASTER state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_virtual_ip_addresses_master_down
+        .. attribute:: ipv6_virtual_ip_addresses_main_down
         
         	Number of DOWN IPv6 Virtual IP Addresses on virtual routers in MASTER state
         	**type**\: int
@@ -685,32 +685,32 @@ class Vrrp(Entity):
             self._child_container_classes = OrderedDict([])
             self._child_list_classes = OrderedDict([])
             self._leafs = OrderedDict([
-                ('ipv4_sessions_master_owner', YLeaf(YType.uint32, 'ipv4-sessions-master-owner')),
-                ('ipv4_sessions_master', YLeaf(YType.uint32, 'ipv4-sessions-master')),
+                ('ipv4_sessions_main_owner', YLeaf(YType.uint32, 'ipv4-sessions-main-owner')),
+                ('ipv4_sessions_main', YLeaf(YType.uint32, 'ipv4-sessions-main')),
                 ('ipv4_sessions_backup', YLeaf(YType.uint32, 'ipv4-sessions-backup')),
                 ('ipv4_sessions_init', YLeaf(YType.uint32, 'ipv4-sessions-init')),
-                ('ipv4_slaves_master', YLeaf(YType.uint32, 'ipv4-slaves-master')),
-                ('ipv4_slaves_backup', YLeaf(YType.uint32, 'ipv4-slaves-backup')),
-                ('ipv4_slaves_init', YLeaf(YType.uint32, 'ipv4-slaves-init')),
-                ('ipv4_virtual_ip_addresses_master_owner_up', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-master-owner-up')),
-                ('ipv4_virtual_ip_addresses_master_owner_down', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-master-owner-down')),
-                ('ipv4_virtual_ip_addresses_master_up', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-master-up')),
-                ('ipv4_virtual_ip_addresses_master_down', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-master-down')),
+                ('ipv4_subordinates_main', YLeaf(YType.uint32, 'ipv4-subordinates-main')),
+                ('ipv4_subordinates_backup', YLeaf(YType.uint32, 'ipv4-subordinates-backup')),
+                ('ipv4_subordinates_init', YLeaf(YType.uint32, 'ipv4-subordinates-init')),
+                ('ipv4_virtual_ip_addresses_main_owner_up', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-main-owner-up')),
+                ('ipv4_virtual_ip_addresses_main_owner_down', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-main-owner-down')),
+                ('ipv4_virtual_ip_addresses_main_up', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-main-up')),
+                ('ipv4_virtual_ip_addresses_main_down', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-main-down')),
                 ('ipv4_virtual_ip_addresses_backup_up', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-backup-up')),
                 ('ipv4_virtual_ip_addresses_backup_down', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-backup-down')),
                 ('ipv4_virtual_ip_addresses_init_up', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-init-up')),
                 ('ipv4_virtual_ip_addresses_init_down', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-init-down')),
-                ('ipv6_sessions_master_owner', YLeaf(YType.uint32, 'ipv6-sessions-master-owner')),
-                ('ipv6_sessions_master', YLeaf(YType.uint32, 'ipv6-sessions-master')),
+                ('ipv6_sessions_main_owner', YLeaf(YType.uint32, 'ipv6-sessions-main-owner')),
+                ('ipv6_sessions_main', YLeaf(YType.uint32, 'ipv6-sessions-main')),
                 ('ipv6_sessions_backup', YLeaf(YType.uint32, 'ipv6-sessions-backup')),
                 ('ipv6_sessions_init', YLeaf(YType.uint32, 'ipv6-sessions-init')),
-                ('ipv6_slaves_master', YLeaf(YType.uint32, 'ipv6-slaves-master')),
-                ('ipv6_slaves_backup', YLeaf(YType.uint32, 'ipv6-slaves-backup')),
-                ('ipv6_slaves_init', YLeaf(YType.uint32, 'ipv6-slaves-init')),
-                ('ipv6_virtual_ip_addresses_master_owner_up', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-master-owner-up')),
-                ('ipv6_virtual_ip_addresses_master_owner_down', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-master-owner-down')),
-                ('ipv6_virtual_ip_addresses_master_up', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-master-up')),
-                ('ipv6_virtual_ip_addresses_master_down', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-master-down')),
+                ('ipv6_subordinates_main', YLeaf(YType.uint32, 'ipv6-subordinates-main')),
+                ('ipv6_subordinates_backup', YLeaf(YType.uint32, 'ipv6-subordinates-backup')),
+                ('ipv6_subordinates_init', YLeaf(YType.uint32, 'ipv6-subordinates-init')),
+                ('ipv6_virtual_ip_addresses_main_owner_up', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-main-owner-up')),
+                ('ipv6_virtual_ip_addresses_main_owner_down', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-main-owner-down')),
+                ('ipv6_virtual_ip_addresses_main_up', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-main-up')),
+                ('ipv6_virtual_ip_addresses_main_down', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-main-down')),
                 ('ipv6_virtual_ip_addresses_backup_up', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-backup-up')),
                 ('ipv6_virtual_ip_addresses_backup_down', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-backup-down')),
                 ('ipv6_virtual_ip_addresses_init_up', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-init-up')),
@@ -732,32 +732,32 @@ class Vrrp(Entity):
                 ('ipv6bfd_sessions_down', YLeaf(YType.uint32, 'ipv6bfd-sessions-down')),
                 ('ipv6bfd_session_inactive', YLeaf(YType.uint32, 'ipv6bfd-session-inactive')),
             ])
-            self.ipv4_sessions_master_owner = None
-            self.ipv4_sessions_master = None
+            self.ipv4_sessions_main_owner = None
+            self.ipv4_sessions_main = None
             self.ipv4_sessions_backup = None
             self.ipv4_sessions_init = None
-            self.ipv4_slaves_master = None
-            self.ipv4_slaves_backup = None
-            self.ipv4_slaves_init = None
-            self.ipv4_virtual_ip_addresses_master_owner_up = None
-            self.ipv4_virtual_ip_addresses_master_owner_down = None
-            self.ipv4_virtual_ip_addresses_master_up = None
-            self.ipv4_virtual_ip_addresses_master_down = None
+            self.ipv4_subordinates_main = None
+            self.ipv4_subordinates_backup = None
+            self.ipv4_subordinates_init = None
+            self.ipv4_virtual_ip_addresses_main_owner_up = None
+            self.ipv4_virtual_ip_addresses_main_owner_down = None
+            self.ipv4_virtual_ip_addresses_main_up = None
+            self.ipv4_virtual_ip_addresses_main_down = None
             self.ipv4_virtual_ip_addresses_backup_up = None
             self.ipv4_virtual_ip_addresses_backup_down = None
             self.ipv4_virtual_ip_addresses_init_up = None
             self.ipv4_virtual_ip_addresses_init_down = None
-            self.ipv6_sessions_master_owner = None
-            self.ipv6_sessions_master = None
+            self.ipv6_sessions_main_owner = None
+            self.ipv6_sessions_main = None
             self.ipv6_sessions_backup = None
             self.ipv6_sessions_init = None
-            self.ipv6_slaves_master = None
-            self.ipv6_slaves_backup = None
-            self.ipv6_slaves_init = None
-            self.ipv6_virtual_ip_addresses_master_owner_up = None
-            self.ipv6_virtual_ip_addresses_master_owner_down = None
-            self.ipv6_virtual_ip_addresses_master_up = None
-            self.ipv6_virtual_ip_addresses_master_down = None
+            self.ipv6_subordinates_main = None
+            self.ipv6_subordinates_backup = None
+            self.ipv6_subordinates_init = None
+            self.ipv6_virtual_ip_addresses_main_owner_up = None
+            self.ipv6_virtual_ip_addresses_main_owner_down = None
+            self.ipv6_virtual_ip_addresses_main_up = None
+            self.ipv6_virtual_ip_addresses_main_down = None
             self.ipv6_virtual_ip_addresses_backup_up = None
             self.ipv6_virtual_ip_addresses_backup_down = None
             self.ipv6_virtual_ip_addresses_init_up = None
@@ -782,7 +782,7 @@ class Vrrp(Entity):
             self._absolute_path = lambda: "Cisco-IOS-XR-ipv4-vrrp-oper:vrrp/%s" % self._segment_path()
 
         def __setattr__(self, name, value):
-            self._perform_setattr(Vrrp.Summary, ['ipv4_sessions_master_owner', 'ipv4_sessions_master', 'ipv4_sessions_backup', 'ipv4_sessions_init', 'ipv4_slaves_master', 'ipv4_slaves_backup', 'ipv4_slaves_init', 'ipv4_virtual_ip_addresses_master_owner_up', 'ipv4_virtual_ip_addresses_master_owner_down', 'ipv4_virtual_ip_addresses_master_up', 'ipv4_virtual_ip_addresses_master_down', 'ipv4_virtual_ip_addresses_backup_up', 'ipv4_virtual_ip_addresses_backup_down', 'ipv4_virtual_ip_addresses_init_up', 'ipv4_virtual_ip_addresses_init_down', 'ipv6_sessions_master_owner', 'ipv6_sessions_master', 'ipv6_sessions_backup', 'ipv6_sessions_init', 'ipv6_slaves_master', 'ipv6_slaves_backup', 'ipv6_slaves_init', 'ipv6_virtual_ip_addresses_master_owner_up', 'ipv6_virtual_ip_addresses_master_owner_down', 'ipv6_virtual_ip_addresses_master_up', 'ipv6_virtual_ip_addresses_master_down', 'ipv6_virtual_ip_addresses_backup_up', 'ipv6_virtual_ip_addresses_backup_down', 'ipv6_virtual_ip_addresses_init_up', 'ipv6_virtual_ip_addresses_init_down', 'interfaces_ipv4_state_up', 'interfaces_ipv4_state_down', 'tracked_interfaces_ipv4_state_up', 'tracked_interfaces_ipv4_state_down', 'interfaces_ipv6_state_up', 'interfaces_ipv6_state_down', 'tracked_interfaces_ipv6_state_up', 'tracked_interfaces_ipv6_state_down', 'tracked_objects_state_up', 'tracked_objects_state_down', 'bfd_sessions_up', 'bfd_sessions_down', 'bfd_session_inactive', 'ipv6bfd_sessions_up', 'ipv6bfd_sessions_down', 'ipv6bfd_session_inactive'], name, value)
+            self._perform_setattr(Vrrp.Summary, ['ipv4_sessions_main_owner', 'ipv4_sessions_main', 'ipv4_sessions_backup', 'ipv4_sessions_init', 'ipv4_subordinates_main', 'ipv4_subordinates_backup', 'ipv4_subordinates_init', 'ipv4_virtual_ip_addresses_main_owner_up', 'ipv4_virtual_ip_addresses_main_owner_down', 'ipv4_virtual_ip_addresses_main_up', 'ipv4_virtual_ip_addresses_main_down', 'ipv4_virtual_ip_addresses_backup_up', 'ipv4_virtual_ip_addresses_backup_down', 'ipv4_virtual_ip_addresses_init_up', 'ipv4_virtual_ip_addresses_init_down', 'ipv6_sessions_main_owner', 'ipv6_sessions_main', 'ipv6_sessions_backup', 'ipv6_sessions_init', 'ipv6_subordinates_main', 'ipv6_subordinates_backup', 'ipv6_subordinates_init', 'ipv6_virtual_ip_addresses_main_owner_up', 'ipv6_virtual_ip_addresses_main_owner_down', 'ipv6_virtual_ip_addresses_main_up', 'ipv6_virtual_ip_addresses_main_down', 'ipv6_virtual_ip_addresses_backup_up', 'ipv6_virtual_ip_addresses_backup_down', 'ipv6_virtual_ip_addresses_init_up', 'ipv6_virtual_ip_addresses_init_down', 'interfaces_ipv4_state_up', 'interfaces_ipv4_state_down', 'tracked_interfaces_ipv4_state_up', 'tracked_interfaces_ipv4_state_down', 'interfaces_ipv6_state_up', 'interfaces_ipv6_state_down', 'tracked_interfaces_ipv6_state_up', 'tracked_interfaces_ipv6_state_down', 'tracked_objects_state_up', 'tracked_objects_state_down', 'bfd_sessions_up', 'bfd_sessions_down', 'bfd_session_inactive', 'ipv6bfd_sessions_up', 'ipv6bfd_sessions_down', 'ipv6bfd_session_inactive'], name, value)
 
 
     class Ipv6(Entity):
@@ -1085,16 +1085,16 @@ class Vrrp(Entity):
                 
                 	**length:** 0..16
                 
-                .. attribute:: slaves
+                .. attribute:: subordinates
                 
-                	Number of slaves following state
+                	Number of subordinates following state
                 	**type**\: int
                 
                 	**range:** 0..4294967295
                 
-                .. attribute:: is_slave
+                .. attribute:: is_subordinate
                 
-                	Group is a slave group
+                	Group is a subordinate group
                 	**type**\: bool
                 
                 .. attribute:: followed_session_name
@@ -1144,23 +1144,23 @@ class Vrrp(Entity):
                 	State of primary IP address
                 	**type**\:  :py:class:`VrrpVipState <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_vrrp_oper.VrrpVipState>`
                 
-                .. attribute:: master_ip_address
+                .. attribute:: main_ip_address
                 
-                	Master router real IP address
+                	Main router real IP address
                 	**type**\: str
                 
                 	**pattern:** (([0\-9]\|[1\-9][0\-9]\|1[0\-9][0\-9]\|2[0\-4][0\-9]\|25[0\-5])\\.){3}([0\-9]\|[1\-9][0\-9]\|1[0\-9][0\-9]\|2[0\-4][0\-9]\|25[0\-5])(%[\\p{N}\\p{L}]+)?
                 
-                .. attribute:: master_ipv6_address
+                .. attribute:: main_ipv6_address
                 
-                	Master router real IPv6 address
+                	Main router real IPv6 address
                 	**type**\: str
                 
                 	**pattern:** ((\:\|[0\-9a\-fA\-F]{0,4})\:)([0\-9a\-fA\-F]{0,4}\:){0,5}((([0\-9a\-fA\-F]{0,4}\:)?(\:\|[0\-9a\-fA\-F]{0,4}))\|(((25[0\-5]\|2[0\-4][0\-9]\|[01]?[0\-9]?[0\-9])\\.){3}(25[0\-5]\|2[0\-4][0\-9]\|[01]?[0\-9]?[0\-9])))(%[\\p{N}\\p{L}]+)?
                 
-                .. attribute:: master_priority
+                .. attribute:: main_priority
                 
-                	Master router priority
+                	Main router priority
                 	**type**\: int
                 
                 	**range:** 0..255
@@ -1341,9 +1341,9 @@ class Vrrp(Entity):
                 
                 	**units**\: centisecond
                 
-                .. attribute:: master_count
+                .. attribute:: main_count
                 
-                	No. of times become Master
+                	No. of times become Main
                 	**type**\: int
                 
                 	**range:** 0..4294967295
@@ -1562,8 +1562,8 @@ class Vrrp(Entity):
                         ('version', YLeaf(YType.uint8, 'version')),
                         ('address_family', YLeaf(YType.enumeration, 'address-family')),
                         ('session_name', YLeaf(YType.str, 'session-name')),
-                        ('slaves', YLeaf(YType.uint32, 'slaves')),
-                        ('is_slave', YLeaf(YType.boolean, 'is-slave')),
+                        ('subordinates', YLeaf(YType.uint32, 'subordinates')),
+                        ('is_subordinate', YLeaf(YType.boolean, 'is-subordinate')),
                         ('followed_session_name', YLeaf(YType.str, 'followed-session-name')),
                         ('secondary_address_count', YLeaf(YType.uint8, 'secondary-address-count')),
                         ('operational_address_count', YLeaf(YType.uint8, 'operational-address-count')),
@@ -1571,9 +1571,9 @@ class Vrrp(Entity):
                         ('configured_down_address_count', YLeaf(YType.uint8, 'configured-down-address-count')),
                         ('virtual_linklocal_ipv6_address', YLeaf(YType.str, 'virtual-linklocal-ipv6-address')),
                         ('primary_state', YLeaf(YType.enumeration, 'primary-state')),
-                        ('master_ip_address', YLeaf(YType.str, 'master-ip-address')),
-                        ('master_ipv6_address', YLeaf(YType.str, 'master-ipv6-address')),
-                        ('master_priority', YLeaf(YType.uint8, 'master-priority')),
+                        ('main_ip_address', YLeaf(YType.str, 'main-ip-address')),
+                        ('main_ipv6_address', YLeaf(YType.str, 'main-ipv6-address')),
+                        ('main_priority', YLeaf(YType.uint8, 'main-priority')),
                         ('vrrp_state', YLeaf(YType.enumeration, 'vrrp-state')),
                         ('authentication_type', YLeaf(YType.enumeration, 'authentication-type')),
                         ('authentication_string', YLeaf(YType.str, 'authentication-string')),
@@ -1600,7 +1600,7 @@ class Vrrp(Entity):
                         ('time_in_current_state', YLeaf(YType.uint32, 'time-in-current-state')),
                         ('state_change_count', YLeaf(YType.uint32, 'state-change-count')),
                         ('time_vrouter_up', YLeaf(YType.uint32, 'time-vrouter-up')),
-                        ('master_count', YLeaf(YType.uint32, 'master-count')),
+                        ('main_count', YLeaf(YType.uint32, 'main-count')),
                         ('adverts_received_count', YLeaf(YType.uint32, 'adverts-received-count')),
                         ('advert_interval_error_count', YLeaf(YType.uint32, 'advert-interval-error-count')),
                         ('adverts_sent_count', YLeaf(YType.uint32, 'adverts-sent-count')),
@@ -1634,8 +1634,8 @@ class Vrrp(Entity):
                     self.version = None
                     self.address_family = None
                     self.session_name = None
-                    self.slaves = None
-                    self.is_slave = None
+                    self.subordinates = None
+                    self.is_subordinate = None
                     self.followed_session_name = None
                     self.secondary_address_count = None
                     self.operational_address_count = None
@@ -1643,9 +1643,9 @@ class Vrrp(Entity):
                     self.configured_down_address_count = None
                     self.virtual_linklocal_ipv6_address = None
                     self.primary_state = None
-                    self.master_ip_address = None
-                    self.master_ipv6_address = None
-                    self.master_priority = None
+                    self.main_ip_address = None
+                    self.main_ipv6_address = None
+                    self.main_priority = None
                     self.vrrp_state = None
                     self.authentication_type = None
                     self.authentication_string = None
@@ -1672,7 +1672,7 @@ class Vrrp(Entity):
                     self.time_in_current_state = None
                     self.state_change_count = None
                     self.time_vrouter_up = None
-                    self.master_count = None
+                    self.main_count = None
                     self.adverts_received_count = None
                     self.advert_interval_error_count = None
                     self.adverts_sent_count = None
@@ -1717,7 +1717,7 @@ class Vrrp(Entity):
                     self._absolute_path = lambda: "Cisco-IOS-XR-ipv4-vrrp-oper:vrrp/ipv6/virtual-routers/%s" % self._segment_path()
 
                 def __setattr__(self, name, value):
-                    self._perform_setattr(Vrrp.Ipv6.VirtualRouters.VirtualRouter, ['interface_name', 'virtual_router_id', 'interface_name_xr', 'virtual_router_id_xr', 'version', 'address_family', 'session_name', 'slaves', 'is_slave', 'followed_session_name', 'secondary_address_count', 'operational_address_count', 'primary_virtual_ip', 'configured_down_address_count', 'virtual_linklocal_ipv6_address', 'primary_state', 'master_ip_address', 'master_ipv6_address', 'master_priority', 'vrrp_state', 'authentication_type', 'authentication_string', 'configured_advertize_time', 'oper_advertize_time', 'min_delay_time', 'reload_delay_time', 'delay_timer_flag', 'delay_timer_secs', 'delay_timer_msecs', 'authentication_flag', 'force_timer_flag', 'preempt_flag', 'ip_address_owner_flag', 'is_accept_mode', 'preempt_delay_time', 'configured_priority', 'operational_priority', 'priority_decrement', 'tracked_interface_count', 'tracked_interface_up_count', 'tracked_item_count', 'tracked_item_up_count', 'time_in_current_state', 'state_change_count', 'time_vrouter_up', 'master_count', 'adverts_received_count', 'advert_interval_error_count', 'adverts_sent_count', 'authentication_fail_count', 'ttl_error_count', 'priority_zero_received_count', 'priority_zero_sent_count', 'invalid_packet_count', 'address_list_error_count', 'invalid_auth_type_count', 'auth_type_mismatch_count', 'pkt_length_errors_count', 'time_stats_discontinuity', 'bfd_session_state', 'bfd_interval', 'bfd_multiplier', 'bfd_cfg_remote_ip', 'bfd_configured_remote_ipv6_address', 'state_from_checkpoint', 'interface_ipv4_address', 'interface_ipv6_address', 'virtual_mac_address', 'virtual_mac_address_state', 'operational_address', 'ipv4_configured_down_address'], name, value)
+                    self._perform_setattr(Vrrp.Ipv6.VirtualRouters.VirtualRouter, ['interface_name', 'virtual_router_id', 'interface_name_xr', 'virtual_router_id_xr', 'version', 'address_family', 'session_name', 'subordinates', 'is_subordinate', 'followed_session_name', 'secondary_address_count', 'operational_address_count', 'primary_virtual_ip', 'configured_down_address_count', 'virtual_linklocal_ipv6_address', 'primary_state', 'main_ip_address', 'main_ipv6_address', 'main_priority', 'vrrp_state', 'authentication_type', 'authentication_string', 'configured_advertize_time', 'oper_advertize_time', 'min_delay_time', 'reload_delay_time', 'delay_timer_flag', 'delay_timer_secs', 'delay_timer_msecs', 'authentication_flag', 'force_timer_flag', 'preempt_flag', 'ip_address_owner_flag', 'is_accept_mode', 'preempt_delay_time', 'configured_priority', 'operational_priority', 'priority_decrement', 'tracked_interface_count', 'tracked_interface_up_count', 'tracked_item_count', 'tracked_item_up_count', 'time_in_current_state', 'state_change_count', 'time_vrouter_up', 'main_count', 'adverts_received_count', 'advert_interval_error_count', 'adverts_sent_count', 'authentication_fail_count', 'ttl_error_count', 'priority_zero_received_count', 'priority_zero_sent_count', 'invalid_packet_count', 'address_list_error_count', 'invalid_auth_type_count', 'auth_type_mismatch_count', 'pkt_length_errors_count', 'time_stats_discontinuity', 'bfd_session_state', 'bfd_interval', 'bfd_multiplier', 'bfd_cfg_remote_ip', 'bfd_configured_remote_ipv6_address', 'state_from_checkpoint', 'interface_ipv4_address', 'interface_ipv6_address', 'virtual_mac_address', 'virtual_mac_address_state', 'operational_address', 'ipv4_configured_down_address'], name, value)
 
 
                 class ResignSentTime(Entity):
@@ -2632,16 +2632,16 @@ class Vrrp(Entity):
                 
                 	**length:** 0..16
                 
-                .. attribute:: slaves
+                .. attribute:: subordinates
                 
-                	Number of slaves following state
+                	Number of subordinates following state
                 	**type**\: int
                 
                 	**range:** 0..4294967295
                 
-                .. attribute:: is_slave
+                .. attribute:: is_subordinate
                 
-                	Group is a slave group
+                	Group is a subordinate group
                 	**type**\: bool
                 
                 .. attribute:: followed_session_name
@@ -2691,23 +2691,23 @@ class Vrrp(Entity):
                 	State of primary IP address
                 	**type**\:  :py:class:`VrrpVipState <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_vrrp_oper.VrrpVipState>`
                 
-                .. attribute:: master_ip_address
+                .. attribute:: main_ip_address
                 
-                	Master router real IP address
+                	Main router real IP address
                 	**type**\: str
                 
                 	**pattern:** (([0\-9]\|[1\-9][0\-9]\|1[0\-9][0\-9]\|2[0\-4][0\-9]\|25[0\-5])\\.){3}([0\-9]\|[1\-9][0\-9]\|1[0\-9][0\-9]\|2[0\-4][0\-9]\|25[0\-5])(%[\\p{N}\\p{L}]+)?
                 
-                .. attribute:: master_ipv6_address
+                .. attribute:: main_ipv6_address
                 
-                	Master router real IPv6 address
+                	Main router real IPv6 address
                 	**type**\: str
                 
                 	**pattern:** ((\:\|[0\-9a\-fA\-F]{0,4})\:)([0\-9a\-fA\-F]{0,4}\:){0,5}((([0\-9a\-fA\-F]{0,4}\:)?(\:\|[0\-9a\-fA\-F]{0,4}))\|(((25[0\-5]\|2[0\-4][0\-9]\|[01]?[0\-9]?[0\-9])\\.){3}(25[0\-5]\|2[0\-4][0\-9]\|[01]?[0\-9]?[0\-9])))(%[\\p{N}\\p{L}]+)?
                 
-                .. attribute:: master_priority
+                .. attribute:: main_priority
                 
-                	Master router priority
+                	Main router priority
                 	**type**\: int
                 
                 	**range:** 0..255
@@ -2888,9 +2888,9 @@ class Vrrp(Entity):
                 
                 	**units**\: centisecond
                 
-                .. attribute:: master_count
+                .. attribute:: main_count
                 
-                	No. of times become Master
+                	No. of times become Main
                 	**type**\: int
                 
                 	**range:** 0..4294967295
@@ -3109,8 +3109,8 @@ class Vrrp(Entity):
                         ('version', YLeaf(YType.uint8, 'version')),
                         ('address_family', YLeaf(YType.enumeration, 'address-family')),
                         ('session_name', YLeaf(YType.str, 'session-name')),
-                        ('slaves', YLeaf(YType.uint32, 'slaves')),
-                        ('is_slave', YLeaf(YType.boolean, 'is-slave')),
+                        ('subordinates', YLeaf(YType.uint32, 'subordinates')),
+                        ('is_subordinate', YLeaf(YType.boolean, 'is-subordinate')),
                         ('followed_session_name', YLeaf(YType.str, 'followed-session-name')),
                         ('secondary_address_count', YLeaf(YType.uint8, 'secondary-address-count')),
                         ('operational_address_count', YLeaf(YType.uint8, 'operational-address-count')),
@@ -3118,9 +3118,9 @@ class Vrrp(Entity):
                         ('configured_down_address_count', YLeaf(YType.uint8, 'configured-down-address-count')),
                         ('virtual_linklocal_ipv6_address', YLeaf(YType.str, 'virtual-linklocal-ipv6-address')),
                         ('primary_state', YLeaf(YType.enumeration, 'primary-state')),
-                        ('master_ip_address', YLeaf(YType.str, 'master-ip-address')),
-                        ('master_ipv6_address', YLeaf(YType.str, 'master-ipv6-address')),
-                        ('master_priority', YLeaf(YType.uint8, 'master-priority')),
+                        ('main_ip_address', YLeaf(YType.str, 'main-ip-address')),
+                        ('main_ipv6_address', YLeaf(YType.str, 'main-ipv6-address')),
+                        ('main_priority', YLeaf(YType.uint8, 'main-priority')),
                         ('vrrp_state', YLeaf(YType.enumeration, 'vrrp-state')),
                         ('authentication_type', YLeaf(YType.enumeration, 'authentication-type')),
                         ('authentication_string', YLeaf(YType.str, 'authentication-string')),
@@ -3147,7 +3147,7 @@ class Vrrp(Entity):
                         ('time_in_current_state', YLeaf(YType.uint32, 'time-in-current-state')),
                         ('state_change_count', YLeaf(YType.uint32, 'state-change-count')),
                         ('time_vrouter_up', YLeaf(YType.uint32, 'time-vrouter-up')),
-                        ('master_count', YLeaf(YType.uint32, 'master-count')),
+                        ('main_count', YLeaf(YType.uint32, 'main-count')),
                         ('adverts_received_count', YLeaf(YType.uint32, 'adverts-received-count')),
                         ('advert_interval_error_count', YLeaf(YType.uint32, 'advert-interval-error-count')),
                         ('adverts_sent_count', YLeaf(YType.uint32, 'adverts-sent-count')),
@@ -3181,8 +3181,8 @@ class Vrrp(Entity):
                     self.version = None
                     self.address_family = None
                     self.session_name = None
-                    self.slaves = None
-                    self.is_slave = None
+                    self.subordinates = None
+                    self.is_subordinate = None
                     self.followed_session_name = None
                     self.secondary_address_count = None
                     self.operational_address_count = None
@@ -3190,9 +3190,9 @@ class Vrrp(Entity):
                     self.configured_down_address_count = None
                     self.virtual_linklocal_ipv6_address = None
                     self.primary_state = None
-                    self.master_ip_address = None
-                    self.master_ipv6_address = None
-                    self.master_priority = None
+                    self.main_ip_address = None
+                    self.main_ipv6_address = None
+                    self.main_priority = None
                     self.vrrp_state = None
                     self.authentication_type = None
                     self.authentication_string = None
@@ -3219,7 +3219,7 @@ class Vrrp(Entity):
                     self.time_in_current_state = None
                     self.state_change_count = None
                     self.time_vrouter_up = None
-                    self.master_count = None
+                    self.main_count = None
                     self.adverts_received_count = None
                     self.advert_interval_error_count = None
                     self.adverts_sent_count = None
@@ -3264,7 +3264,7 @@ class Vrrp(Entity):
                     self._absolute_path = lambda: "Cisco-IOS-XR-ipv4-vrrp-oper:vrrp/ipv4/virtual-routers/%s" % self._segment_path()
 
                 def __setattr__(self, name, value):
-                    self._perform_setattr(Vrrp.Ipv4.VirtualRouters.VirtualRouter, ['interface_name', 'virtual_router_id', 'interface_name_xr', 'virtual_router_id_xr', 'version', 'address_family', 'session_name', 'slaves', 'is_slave', 'followed_session_name', 'secondary_address_count', 'operational_address_count', 'primary_virtual_ip', 'configured_down_address_count', 'virtual_linklocal_ipv6_address', 'primary_state', 'master_ip_address', 'master_ipv6_address', 'master_priority', 'vrrp_state', 'authentication_type', 'authentication_string', 'configured_advertize_time', 'oper_advertize_time', 'min_delay_time', 'reload_delay_time', 'delay_timer_flag', 'delay_timer_secs', 'delay_timer_msecs', 'authentication_flag', 'force_timer_flag', 'preempt_flag', 'ip_address_owner_flag', 'is_accept_mode', 'preempt_delay_time', 'configured_priority', 'operational_priority', 'priority_decrement', 'tracked_interface_count', 'tracked_interface_up_count', 'tracked_item_count', 'tracked_item_up_count', 'time_in_current_state', 'state_change_count', 'time_vrouter_up', 'master_count', 'adverts_received_count', 'advert_interval_error_count', 'adverts_sent_count', 'authentication_fail_count', 'ttl_error_count', 'priority_zero_received_count', 'priority_zero_sent_count', 'invalid_packet_count', 'address_list_error_count', 'invalid_auth_type_count', 'auth_type_mismatch_count', 'pkt_length_errors_count', 'time_stats_discontinuity', 'bfd_session_state', 'bfd_interval', 'bfd_multiplier', 'bfd_cfg_remote_ip', 'bfd_configured_remote_ipv6_address', 'state_from_checkpoint', 'interface_ipv4_address', 'interface_ipv6_address', 'virtual_mac_address', 'virtual_mac_address_state', 'operational_address', 'ipv4_configured_down_address'], name, value)
+                    self._perform_setattr(Vrrp.Ipv4.VirtualRouters.VirtualRouter, ['interface_name', 'virtual_router_id', 'interface_name_xr', 'virtual_router_id_xr', 'version', 'address_family', 'session_name', 'subordinates', 'is_subordinate', 'followed_session_name', 'secondary_address_count', 'operational_address_count', 'primary_virtual_ip', 'configured_down_address_count', 'virtual_linklocal_ipv6_address', 'primary_state', 'main_ip_address', 'main_ipv6_address', 'main_priority', 'vrrp_state', 'authentication_type', 'authentication_string', 'configured_advertize_time', 'oper_advertize_time', 'min_delay_time', 'reload_delay_time', 'delay_timer_flag', 'delay_timer_secs', 'delay_timer_msecs', 'authentication_flag', 'force_timer_flag', 'preempt_flag', 'ip_address_owner_flag', 'is_accept_mode', 'preempt_delay_time', 'configured_priority', 'operational_priority', 'priority_decrement', 'tracked_interface_count', 'tracked_interface_up_count', 'tracked_item_count', 'tracked_item_up_count', 'time_in_current_state', 'state_change_count', 'time_vrouter_up', 'main_count', 'adverts_received_count', 'advert_interval_error_count', 'adverts_sent_count', 'authentication_fail_count', 'ttl_error_count', 'priority_zero_received_count', 'priority_zero_sent_count', 'invalid_packet_count', 'address_list_error_count', 'invalid_auth_type_count', 'auth_type_mismatch_count', 'pkt_length_errors_count', 'time_stats_discontinuity', 'bfd_session_state', 'bfd_interval', 'bfd_multiplier', 'bfd_cfg_remote_ip', 'bfd_configured_remote_ipv6_address', 'state_from_checkpoint', 'interface_ipv4_address', 'interface_ipv6_address', 'virtual_mac_address', 'virtual_mac_address_state', 'operational_address', 'ipv4_configured_down_address'], name, value)
 
 
                 class ResignSentTime(Entity):
@@ -3717,10 +3717,10 @@ class Vrrp(Entity):
             	State of primary session
             	**type**\:  :py:class:`VrrpBagProtocolState <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_vrrp_oper.VrrpBagProtocolState>`
             
-            .. attribute:: slave
+            .. attribute:: subordinate
             
-            	List of slaves following this primary session
-            	**type**\: list of  		 :py:class:`Slave <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_vrrp_oper.Vrrp.MgoSessions.MgoSession.Slave>`
+            	List of subordinates following this primary session
+            	**type**\: list of  		 :py:class:`Subordinate <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_vrrp_oper.Vrrp.MgoSessions.MgoSession.Subordinate>`
             
             
 
@@ -3738,7 +3738,7 @@ class Vrrp(Entity):
                 self.has_list_ancestor = False
                 self.ylist_key_names = ['session_name']
                 self._child_container_classes = OrderedDict([])
-                self._child_list_classes = OrderedDict([("slave", ("slave", Vrrp.MgoSessions.MgoSession.Slave))])
+                self._child_list_classes = OrderedDict([("subordinate", ("subordinate", Vrrp.MgoSessions.MgoSession.Subordinate))])
                 self._leafs = OrderedDict([
                     ('session_name', YLeaf(YType.str, 'session-name')),
                     ('primary_session_name', YLeaf(YType.str, 'primary-session-name')),
@@ -3754,7 +3754,7 @@ class Vrrp(Entity):
                 self.primary_session_number = None
                 self.primary_session_state = None
 
-                self.slave = YList(self)
+                self.subordinate = YList(self)
                 self._segment_path = lambda: "mgo-session" + "[session-name='" + str(self.session_name) + "']"
                 self._absolute_path = lambda: "Cisco-IOS-XR-ipv4-vrrp-oper:vrrp/mgo-sessions/%s" % self._segment_path()
 
@@ -3762,20 +3762,20 @@ class Vrrp(Entity):
                 self._perform_setattr(Vrrp.MgoSessions.MgoSession, ['session_name', 'primary_session_name', 'primary_session_interface', 'primary_af_name', 'primary_session_number', 'primary_session_state'], name, value)
 
 
-            class Slave(Entity):
+            class Subordinate(Entity):
                 """
-                List of slaves following this primary session
+                List of subordinates following this primary session
                 
-                .. attribute:: slave_interface
+                .. attribute:: subordinate_interface
                 
-                	Interface of slave
+                	Interface of subordinate
                 	**type**\: str
                 
                 	**length:** 0..64
                 
-                .. attribute:: slave_virtual_router_id
+                .. attribute:: subordinate_virtual_router_id
                 
-                	VRID of slave
+                	VRID of subordinate
                 	**type**\: int
                 
                 	**range:** 0..4294967295
@@ -3788,9 +3788,9 @@ class Vrrp(Entity):
                 _revision = '2017-05-01'
 
                 def __init__(self):
-                    super(Vrrp.MgoSessions.MgoSession.Slave, self).__init__()
+                    super(Vrrp.MgoSessions.MgoSession.Subordinate, self).__init__()
 
-                    self.yang_name = "slave"
+                    self.yang_name = "subordinate"
                     self.yang_parent_name = "mgo-session"
                     self.is_top_level_class = False
                     self.has_list_ancestor = True
@@ -3798,15 +3798,15 @@ class Vrrp(Entity):
                     self._child_container_classes = OrderedDict([])
                     self._child_list_classes = OrderedDict([])
                     self._leafs = OrderedDict([
-                        ('slave_interface', YLeaf(YType.str, 'slave-interface')),
-                        ('slave_virtual_router_id', YLeaf(YType.uint32, 'slave-virtual-router-id')),
+                        ('subordinate_interface', YLeaf(YType.str, 'subordinate-interface')),
+                        ('subordinate_virtual_router_id', YLeaf(YType.uint32, 'subordinate-virtual-router-id')),
                     ])
-                    self.slave_interface = None
-                    self.slave_virtual_router_id = None
-                    self._segment_path = lambda: "slave"
+                    self.subordinate_interface = None
+                    self.subordinate_virtual_router_id = None
+                    self._segment_path = lambda: "subordinate"
 
                 def __setattr__(self, name, value):
-                    self._perform_setattr(Vrrp.MgoSessions.MgoSession.Slave, ['slave_interface', 'slave_virtual_router_id'], name, value)
+                    self._perform_setattr(Vrrp.MgoSessions.MgoSession.Subordinate, ['subordinate_interface', 'subordinate_virtual_router_id'], name, value)
 
     def clone_ptr(self):
         self._top_entity = Vrrp()

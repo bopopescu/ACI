@@ -1,11 +1,11 @@
-""" Cisco_IOS_XR_lib_keychain_masterkey_aes_cfg 
+""" Cisco_IOS_XR_lib_keychain_mainkey_aes_cfg 
 
 This module contains a collection of YANG definitions
-for Cisco IOS\-XR lib\-keychain\-masterkey\-aes package configuration.
+for Cisco IOS\-XR lib\-keychain\-mainkey\-aes package configuration.
 
 This module contains definitions
 for the following management objects\:
-  password\: Configure masterkey
+  password\: Configure mainkey
 
 Copyright (c) 2013\-2017 by Cisco Systems, Inc.
 All rights reserved.
@@ -22,18 +22,18 @@ from ydk.errors.error_handler import handle_type_error as _handle_type_error
 
 class Password(Entity):
     """
-    Configure masterkey
+    Configure mainkey
     
     .. attribute:: encryption
     
     	Enable password encryption
-    	**type**\:  :py:class:`Encryption <ydk.models.cisco_ios_xr.Cisco_IOS_XR_lib_keychain_masterkey_aes_cfg.Password.Encryption>`
+    	**type**\:  :py:class:`Encryption <ydk.models.cisco_ios_xr.Cisco_IOS_XR_lib_keychain_mainkey_aes_cfg.Password.Encryption>`
     
     
 
     """
 
-    _prefix = 'lib-keychain-masterkey-aes-cfg'
+    _prefix = 'lib-keychain-mainkey-aes-cfg'
     _revision = '2015-11-09'
 
     def __init__(self):
@@ -41,7 +41,7 @@ class Password(Entity):
         self._top_entity = None
 
         self.yang_name = "password"
-        self.yang_parent_name = "Cisco-IOS-XR-lib-keychain-masterkey-aes-cfg"
+        self.yang_parent_name = "Cisco-IOS-XR-lib-keychain-mainkey-aes-cfg"
         self.is_top_level_class = True
         self.has_list_ancestor = False
         self.ylist_key_names = []
@@ -53,7 +53,7 @@ class Password(Entity):
         self.encryption.parent = self
         self._children_name_map["encryption"] = "encryption"
         self._children_yang_names.add("encryption")
-        self._segment_path = lambda: "Cisco-IOS-XR-lib-keychain-masterkey-aes-cfg:password"
+        self._segment_path = lambda: "Cisco-IOS-XR-lib-keychain-mainkey-aes-cfg:password"
 
 
     class Encryption(Entity):
@@ -73,7 +73,7 @@ class Password(Entity):
 
         """
 
-        _prefix = 'lib-keychain-masterkey-aes-cfg'
+        _prefix = 'lib-keychain-mainkey-aes-cfg'
         _revision = '2015-11-09'
 
         def __init__(self):
@@ -91,7 +91,7 @@ class Password(Entity):
             ])
             self.aes = None
             self._segment_path = lambda: "encryption"
-            self._absolute_path = lambda: "Cisco-IOS-XR-lib-keychain-masterkey-aes-cfg:password/%s" % self._segment_path()
+            self._absolute_path = lambda: "Cisco-IOS-XR-lib-keychain-mainkey-aes-cfg:password/%s" % self._segment_path()
 
         def __setattr__(self, name, value):
             self._perform_setattr(Password.Encryption, ['aes'], name, value)

@@ -580,16 +580,16 @@ class Hsrp(Entity):
                 
                 	**length:** 0..16
                 
-                .. attribute:: slaves
+                .. attribute:: subordinates
                 
-                	Number of slaves following state
+                	Number of subordinates following state
                 	**type**\: int
                 
                 	**range:** 0..4294967295
                 
-                .. attribute:: is_slave
+                .. attribute:: is_subordinate
                 
-                	Group is a slave group
+                	Group is a subordinate group
                 	**type**\: bool
                 
                 .. attribute:: followed_session_name
@@ -1017,8 +1017,8 @@ class Hsrp(Entity):
                         ('address_family', YLeaf(YType.enumeration, 'address-family')),
                         ('version', YLeaf(YType.uint8, 'version')),
                         ('session_name', YLeaf(YType.str, 'session-name')),
-                        ('slaves', YLeaf(YType.uint32, 'slaves')),
-                        ('is_slave', YLeaf(YType.boolean, 'is-slave')),
+                        ('subordinates', YLeaf(YType.uint32, 'subordinates')),
+                        ('is_subordinate', YLeaf(YType.boolean, 'is-subordinate')),
                         ('followed_session_name', YLeaf(YType.str, 'followed-session-name')),
                         ('configured_priority', YLeaf(YType.uint8, 'configured-priority')),
                         ('preempt_delay', YLeaf(YType.uint32, 'preempt-delay')),
@@ -1083,8 +1083,8 @@ class Hsrp(Entity):
                     self.address_family = None
                     self.version = None
                     self.session_name = None
-                    self.slaves = None
-                    self.is_slave = None
+                    self.subordinates = None
+                    self.is_subordinate = None
                     self.followed_session_name = None
                     self.configured_priority = None
                     self.preempt_delay = None
@@ -1172,7 +1172,7 @@ class Hsrp(Entity):
                     self._absolute_path = lambda: "Cisco-IOS-XR-ipv4-hsrp-oper:hsrp/ipv4/groups/%s" % self._segment_path()
 
                 def __setattr__(self, name, value):
-                    self._perform_setattr(Hsrp.Ipv4.Groups.Group, ['interface_name', 'group_number', 'authentication_string', 'virtual_mac_address', 'hsrp_group_number', 'address_family', 'version', 'session_name', 'slaves', 'is_slave', 'followed_session_name', 'configured_priority', 'preempt_delay', 'preempt_timer_secs', 'hello_time', 'hold_time', 'learned_hello_time', 'learned_hold_time', 'min_delay_time', 'reload_delay_time', 'virtual_ip_address', 'virtual_linklocal_ipv6_address', 'active_ip_address', 'active_ipv6_address', 'active_mac_address', 'standby_ip_address', 'standby_ipv6_address', 'standby_mac_address', 'hsrp_router_state', 'interface_name_xr', 'interface', 'router_priority', 'active_priority', 'active_timer_flag', 'active_timer_secs', 'active_timer_msecs', 'standby_timer_flag', 'standby_timer_secs', 'standby_timer_msecs', 'hello_timer_flag', 'hello_timer_secs', 'hello_timer_msecs', 'delay_timer_flag', 'delay_timer_secs', 'delay_timer_msecs', 'current_state_timer_secs', 'state_change_count', 'tracked_interface_count', 'tracked_interface_up_count', 'preempt_enabled', 'use_configured_timers', 'use_configured_virtual_ip', 'use_bia_configured', 'configured_timers', 'configured_mac_address', 'redirects_disabled', 'bfd_enabled', 'bfd_interface', 'bfd_peer_ip_address', 'bfd_peer_ipv6_address', 'bfd_session_state', 'bfd_interval', 'bfd_multiplier', 'virtual_mac_address_state', 'secondary_address'], name, value)
+                    self._perform_setattr(Hsrp.Ipv4.Groups.Group, ['interface_name', 'group_number', 'authentication_string', 'virtual_mac_address', 'hsrp_group_number', 'address_family', 'version', 'session_name', 'subordinates', 'is_subordinate', 'followed_session_name', 'configured_priority', 'preempt_delay', 'preempt_timer_secs', 'hello_time', 'hold_time', 'learned_hello_time', 'learned_hold_time', 'min_delay_time', 'reload_delay_time', 'virtual_ip_address', 'virtual_linklocal_ipv6_address', 'active_ip_address', 'active_ipv6_address', 'active_mac_address', 'standby_ip_address', 'standby_ipv6_address', 'standby_mac_address', 'hsrp_router_state', 'interface_name_xr', 'interface', 'router_priority', 'active_priority', 'active_timer_flag', 'active_timer_secs', 'active_timer_msecs', 'standby_timer_flag', 'standby_timer_secs', 'standby_timer_msecs', 'hello_timer_flag', 'hello_timer_secs', 'hello_timer_msecs', 'delay_timer_flag', 'delay_timer_secs', 'delay_timer_msecs', 'current_state_timer_secs', 'state_change_count', 'tracked_interface_count', 'tracked_interface_up_count', 'preempt_enabled', 'use_configured_timers', 'use_configured_virtual_ip', 'use_bia_configured', 'configured_timers', 'configured_mac_address', 'redirects_disabled', 'bfd_enabled', 'bfd_interface', 'bfd_peer_ip_address', 'bfd_peer_ipv6_address', 'bfd_session_state', 'bfd_interval', 'bfd_multiplier', 'virtual_mac_address_state', 'secondary_address'], name, value)
 
 
                 class ResignSentTime(Entity):
@@ -2124,10 +2124,10 @@ class Hsrp(Entity):
             	State of primary session
             	**type**\:  :py:class:`StandbyGrpState <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_oper.StandbyGrpState>`
             
-            .. attribute:: slave
+            .. attribute:: subordinate
             
-            	List of slaves following this primary session
-            	**type**\: list of  		 :py:class:`Slave <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_oper.Hsrp.MgoSessions.MgoSession.Slave>`
+            	List of subordinates following this primary session
+            	**type**\: list of  		 :py:class:`Subordinate <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ipv4_hsrp_oper.Hsrp.MgoSessions.MgoSession.Subordinate>`
             
             
 
@@ -2145,7 +2145,7 @@ class Hsrp(Entity):
                 self.has_list_ancestor = False
                 self.ylist_key_names = ['session_name']
                 self._child_container_classes = OrderedDict([])
-                self._child_list_classes = OrderedDict([("slave", ("slave", Hsrp.MgoSessions.MgoSession.Slave))])
+                self._child_list_classes = OrderedDict([("subordinate", ("subordinate", Hsrp.MgoSessions.MgoSession.Subordinate))])
                 self._leafs = OrderedDict([
                     ('session_name', YLeaf(YType.str, 'session-name')),
                     ('primary_session_name', YLeaf(YType.str, 'primary-session-name')),
@@ -2161,7 +2161,7 @@ class Hsrp(Entity):
                 self.primary_session_number = None
                 self.primary_session_state = None
 
-                self.slave = YList(self)
+                self.subordinate = YList(self)
                 self._segment_path = lambda: "mgo-session" + "[session-name='" + str(self.session_name) + "']"
                 self._absolute_path = lambda: "Cisco-IOS-XR-ipv4-hsrp-oper:hsrp/mgo-sessions/%s" % self._segment_path()
 
@@ -2169,20 +2169,20 @@ class Hsrp(Entity):
                 self._perform_setattr(Hsrp.MgoSessions.MgoSession, ['session_name', 'primary_session_name', 'primary_session_interface', 'primary_af_name', 'primary_session_number', 'primary_session_state'], name, value)
 
 
-            class Slave(Entity):
+            class Subordinate(Entity):
                 """
-                List of slaves following this primary session
+                List of subordinates following this primary session
                 
-                .. attribute:: slave_group_interface
+                .. attribute:: subordinate_group_interface
                 
-                	Interface of slave group
+                	Interface of subordinate group
                 	**type**\: str
                 
                 	**length:** 0..64
                 
-                .. attribute:: slave_group_number
+                .. attribute:: subordinate_group_number
                 
-                	Group number of slave group
+                	Group number of subordinate group
                 	**type**\: int
                 
                 	**range:** 0..4294967295
@@ -2195,9 +2195,9 @@ class Hsrp(Entity):
                 _revision = '2015-11-09'
 
                 def __init__(self):
-                    super(Hsrp.MgoSessions.MgoSession.Slave, self).__init__()
+                    super(Hsrp.MgoSessions.MgoSession.Subordinate, self).__init__()
 
-                    self.yang_name = "slave"
+                    self.yang_name = "subordinate"
                     self.yang_parent_name = "mgo-session"
                     self.is_top_level_class = False
                     self.has_list_ancestor = True
@@ -2205,15 +2205,15 @@ class Hsrp(Entity):
                     self._child_container_classes = OrderedDict([])
                     self._child_list_classes = OrderedDict([])
                     self._leafs = OrderedDict([
-                        ('slave_group_interface', YLeaf(YType.str, 'slave-group-interface')),
-                        ('slave_group_number', YLeaf(YType.uint32, 'slave-group-number')),
+                        ('subordinate_group_interface', YLeaf(YType.str, 'subordinate-group-interface')),
+                        ('subordinate_group_number', YLeaf(YType.uint32, 'subordinate-group-number')),
                     ])
-                    self.slave_group_interface = None
-                    self.slave_group_number = None
-                    self._segment_path = lambda: "slave"
+                    self.subordinate_group_interface = None
+                    self.subordinate_group_number = None
+                    self._segment_path = lambda: "subordinate"
 
                 def __setattr__(self, name, value):
-                    self._perform_setattr(Hsrp.MgoSessions.MgoSession.Slave, ['slave_group_interface', 'slave_group_number'], name, value)
+                    self._perform_setattr(Hsrp.MgoSessions.MgoSession.Subordinate, ['subordinate_group_interface', 'subordinate_group_number'], name, value)
 
 
     class Ipv6(Entity):
@@ -2534,16 +2534,16 @@ class Hsrp(Entity):
                 
                 	**length:** 0..16
                 
-                .. attribute:: slaves
+                .. attribute:: subordinates
                 
-                	Number of slaves following state
+                	Number of subordinates following state
                 	**type**\: int
                 
                 	**range:** 0..4294967295
                 
-                .. attribute:: is_slave
+                .. attribute:: is_subordinate
                 
-                	Group is a slave group
+                	Group is a subordinate group
                 	**type**\: bool
                 
                 .. attribute:: followed_session_name
@@ -2971,8 +2971,8 @@ class Hsrp(Entity):
                         ('address_family', YLeaf(YType.enumeration, 'address-family')),
                         ('version', YLeaf(YType.uint8, 'version')),
                         ('session_name', YLeaf(YType.str, 'session-name')),
-                        ('slaves', YLeaf(YType.uint32, 'slaves')),
-                        ('is_slave', YLeaf(YType.boolean, 'is-slave')),
+                        ('subordinates', YLeaf(YType.uint32, 'subordinates')),
+                        ('is_subordinate', YLeaf(YType.boolean, 'is-subordinate')),
                         ('followed_session_name', YLeaf(YType.str, 'followed-session-name')),
                         ('configured_priority', YLeaf(YType.uint8, 'configured-priority')),
                         ('preempt_delay', YLeaf(YType.uint32, 'preempt-delay')),
@@ -3037,8 +3037,8 @@ class Hsrp(Entity):
                     self.address_family = None
                     self.version = None
                     self.session_name = None
-                    self.slaves = None
-                    self.is_slave = None
+                    self.subordinates = None
+                    self.is_subordinate = None
                     self.followed_session_name = None
                     self.configured_priority = None
                     self.preempt_delay = None
@@ -3126,7 +3126,7 @@ class Hsrp(Entity):
                     self._absolute_path = lambda: "Cisco-IOS-XR-ipv4-hsrp-oper:hsrp/ipv6/groups/%s" % self._segment_path()
 
                 def __setattr__(self, name, value):
-                    self._perform_setattr(Hsrp.Ipv6.Groups.Group, ['interface_name', 'group_number', 'authentication_string', 'virtual_mac_address', 'hsrp_group_number', 'address_family', 'version', 'session_name', 'slaves', 'is_slave', 'followed_session_name', 'configured_priority', 'preempt_delay', 'preempt_timer_secs', 'hello_time', 'hold_time', 'learned_hello_time', 'learned_hold_time', 'min_delay_time', 'reload_delay_time', 'virtual_ip_address', 'virtual_linklocal_ipv6_address', 'active_ip_address', 'active_ipv6_address', 'active_mac_address', 'standby_ip_address', 'standby_ipv6_address', 'standby_mac_address', 'hsrp_router_state', 'interface_name_xr', 'interface', 'router_priority', 'active_priority', 'active_timer_flag', 'active_timer_secs', 'active_timer_msecs', 'standby_timer_flag', 'standby_timer_secs', 'standby_timer_msecs', 'hello_timer_flag', 'hello_timer_secs', 'hello_timer_msecs', 'delay_timer_flag', 'delay_timer_secs', 'delay_timer_msecs', 'current_state_timer_secs', 'state_change_count', 'tracked_interface_count', 'tracked_interface_up_count', 'preempt_enabled', 'use_configured_timers', 'use_configured_virtual_ip', 'use_bia_configured', 'configured_timers', 'configured_mac_address', 'redirects_disabled', 'bfd_enabled', 'bfd_interface', 'bfd_peer_ip_address', 'bfd_peer_ipv6_address', 'bfd_session_state', 'bfd_interval', 'bfd_multiplier', 'virtual_mac_address_state', 'secondary_address'], name, value)
+                    self._perform_setattr(Hsrp.Ipv6.Groups.Group, ['interface_name', 'group_number', 'authentication_string', 'virtual_mac_address', 'hsrp_group_number', 'address_family', 'version', 'session_name', 'subordinates', 'is_subordinate', 'followed_session_name', 'configured_priority', 'preempt_delay', 'preempt_timer_secs', 'hello_time', 'hold_time', 'learned_hello_time', 'learned_hold_time', 'min_delay_time', 'reload_delay_time', 'virtual_ip_address', 'virtual_linklocal_ipv6_address', 'active_ip_address', 'active_ipv6_address', 'active_mac_address', 'standby_ip_address', 'standby_ipv6_address', 'standby_mac_address', 'hsrp_router_state', 'interface_name_xr', 'interface', 'router_priority', 'active_priority', 'active_timer_flag', 'active_timer_secs', 'active_timer_msecs', 'standby_timer_flag', 'standby_timer_secs', 'standby_timer_msecs', 'hello_timer_flag', 'hello_timer_secs', 'hello_timer_msecs', 'delay_timer_flag', 'delay_timer_secs', 'delay_timer_msecs', 'current_state_timer_secs', 'state_change_count', 'tracked_interface_count', 'tracked_interface_up_count', 'preempt_enabled', 'use_configured_timers', 'use_configured_virtual_ip', 'use_bia_configured', 'configured_timers', 'configured_mac_address', 'redirects_disabled', 'bfd_enabled', 'bfd_interface', 'bfd_peer_ip_address', 'bfd_peer_ipv6_address', 'bfd_session_state', 'bfd_interval', 'bfd_multiplier', 'virtual_mac_address_state', 'secondary_address'], name, value)
 
 
                 class ResignSentTime(Entity):
@@ -4106,44 +4106,44 @@ class Hsrp(Entity):
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_slaves_active
+        .. attribute:: ipv4_subordinates_active
         
-        	Number of IPv4 slaves in ACTIVE state
+        	Number of IPv4 subordinates in ACTIVE state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_slaves_standby
+        .. attribute:: ipv4_subordinates_standby
         
-        	Number of IPv4 slaves in STANDBY state
+        	Number of IPv4 subordinates in STANDBY state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_slaves_speak
+        .. attribute:: ipv4_subordinates_speak
         
-        	Number of IPv4 slaves in SPEAK state
+        	Number of IPv4 subordinates in SPEAK state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_slaves_listen
+        .. attribute:: ipv4_subordinates_listen
         
-        	Number of IPv4 slaves in LISTEN state
+        	Number of IPv4 subordinates in LISTEN state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_slaves_learn
+        .. attribute:: ipv4_subordinates_learn
         
-        	Number of IPv4 slaves in LEARN state
+        	Number of IPv4 subordinates in LEARN state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv4_slaves_init
+        .. attribute:: ipv4_subordinates_init
         
-        	Number of IPv4 slaves in INIT state
+        	Number of IPv4 subordinates in INIT state
         	**type**\: int
         
         	**range:** 0..4294967295
@@ -4274,44 +4274,44 @@ class Hsrp(Entity):
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_slaves_active
+        .. attribute:: ipv6_subordinates_active
         
-        	Number of IPv6 slaves in ACTIVE state
+        	Number of IPv6 subordinates in ACTIVE state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_slaves_standby
+        .. attribute:: ipv6_subordinates_standby
         
-        	Number of IPv6 slaves in STANDBY state
+        	Number of IPv6 subordinates in STANDBY state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_slaves_speak
+        .. attribute:: ipv6_subordinates_speak
         
-        	Number of IPv6 slaves in SPEAK state
+        	Number of IPv6 subordinates in SPEAK state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_slaves_listen
+        .. attribute:: ipv6_subordinates_listen
         
-        	Number of IPv6 slaves in LISTEN state
+        	Number of IPv6 subordinates in LISTEN state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_slaves_learn
+        .. attribute:: ipv6_subordinates_learn
         
-        	Number of IPv6 slaves in LEARN state
+        	Number of IPv6 subordinates in LEARN state
         	**type**\: int
         
         	**range:** 0..4294967295
         
-        .. attribute:: ipv6_slaves_init
+        .. attribute:: ipv6_subordinates_init
         
-        	Number of IPv6 slaves in INIT state
+        	Number of IPv6 subordinates in INIT state
         	**type**\: int
         
         	**range:** 0..4294967295
@@ -4515,12 +4515,12 @@ class Hsrp(Entity):
                 ('ipv4_sessions_listen', YLeaf(YType.uint32, 'ipv4-sessions-listen')),
                 ('ipv4_sessions_learn', YLeaf(YType.uint32, 'ipv4-sessions-learn')),
                 ('ipv4_sessions_init', YLeaf(YType.uint32, 'ipv4-sessions-init')),
-                ('ipv4_slaves_active', YLeaf(YType.uint32, 'ipv4-slaves-active')),
-                ('ipv4_slaves_standby', YLeaf(YType.uint32, 'ipv4-slaves-standby')),
-                ('ipv4_slaves_speak', YLeaf(YType.uint32, 'ipv4-slaves-speak')),
-                ('ipv4_slaves_listen', YLeaf(YType.uint32, 'ipv4-slaves-listen')),
-                ('ipv4_slaves_learn', YLeaf(YType.uint32, 'ipv4-slaves-learn')),
-                ('ipv4_slaves_init', YLeaf(YType.uint32, 'ipv4-slaves-init')),
+                ('ipv4_subordinates_active', YLeaf(YType.uint32, 'ipv4-subordinates-active')),
+                ('ipv4_subordinates_standby', YLeaf(YType.uint32, 'ipv4-subordinates-standby')),
+                ('ipv4_subordinates_speak', YLeaf(YType.uint32, 'ipv4-subordinates-speak')),
+                ('ipv4_subordinates_listen', YLeaf(YType.uint32, 'ipv4-subordinates-listen')),
+                ('ipv4_subordinates_learn', YLeaf(YType.uint32, 'ipv4-subordinates-learn')),
+                ('ipv4_subordinates_init', YLeaf(YType.uint32, 'ipv4-subordinates-init')),
                 ('ipv4_virtual_ip_addresses_active_up', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-active-up')),
                 ('ipv4_virtual_ip_addresses_active_down', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-active-down')),
                 ('ipv4_virtual_ip_addresses_standby_up', YLeaf(YType.uint32, 'ipv4-virtual-ip-addresses-standby-up')),
@@ -4539,12 +4539,12 @@ class Hsrp(Entity):
                 ('ipv6_sessions_listen', YLeaf(YType.uint32, 'ipv6-sessions-listen')),
                 ('ipv6_sessions_learn', YLeaf(YType.uint32, 'ipv6-sessions-learn')),
                 ('ipv6_sessions_init', YLeaf(YType.uint32, 'ipv6-sessions-init')),
-                ('ipv6_slaves_active', YLeaf(YType.uint32, 'ipv6-slaves-active')),
-                ('ipv6_slaves_standby', YLeaf(YType.uint32, 'ipv6-slaves-standby')),
-                ('ipv6_slaves_speak', YLeaf(YType.uint32, 'ipv6-slaves-speak')),
-                ('ipv6_slaves_listen', YLeaf(YType.uint32, 'ipv6-slaves-listen')),
-                ('ipv6_slaves_learn', YLeaf(YType.uint32, 'ipv6-slaves-learn')),
-                ('ipv6_slaves_init', YLeaf(YType.uint32, 'ipv6-slaves-init')),
+                ('ipv6_subordinates_active', YLeaf(YType.uint32, 'ipv6-subordinates-active')),
+                ('ipv6_subordinates_standby', YLeaf(YType.uint32, 'ipv6-subordinates-standby')),
+                ('ipv6_subordinates_speak', YLeaf(YType.uint32, 'ipv6-subordinates-speak')),
+                ('ipv6_subordinates_listen', YLeaf(YType.uint32, 'ipv6-subordinates-listen')),
+                ('ipv6_subordinates_learn', YLeaf(YType.uint32, 'ipv6-subordinates-learn')),
+                ('ipv6_subordinates_init', YLeaf(YType.uint32, 'ipv6-subordinates-init')),
                 ('ipv6_virtual_ip_addresses_active_up', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-active-up')),
                 ('ipv6_virtual_ip_addresses_active_down', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-active-down')),
                 ('ipv6_virtual_ip_addresses_standby_up', YLeaf(YType.uint32, 'ipv6-virtual-ip-addresses-standby-up')),
@@ -4577,12 +4577,12 @@ class Hsrp(Entity):
             self.ipv4_sessions_listen = None
             self.ipv4_sessions_learn = None
             self.ipv4_sessions_init = None
-            self.ipv4_slaves_active = None
-            self.ipv4_slaves_standby = None
-            self.ipv4_slaves_speak = None
-            self.ipv4_slaves_listen = None
-            self.ipv4_slaves_learn = None
-            self.ipv4_slaves_init = None
+            self.ipv4_subordinates_active = None
+            self.ipv4_subordinates_standby = None
+            self.ipv4_subordinates_speak = None
+            self.ipv4_subordinates_listen = None
+            self.ipv4_subordinates_learn = None
+            self.ipv4_subordinates_init = None
             self.ipv4_virtual_ip_addresses_active_up = None
             self.ipv4_virtual_ip_addresses_active_down = None
             self.ipv4_virtual_ip_addresses_standby_up = None
@@ -4601,12 +4601,12 @@ class Hsrp(Entity):
             self.ipv6_sessions_listen = None
             self.ipv6_sessions_learn = None
             self.ipv6_sessions_init = None
-            self.ipv6_slaves_active = None
-            self.ipv6_slaves_standby = None
-            self.ipv6_slaves_speak = None
-            self.ipv6_slaves_listen = None
-            self.ipv6_slaves_learn = None
-            self.ipv6_slaves_init = None
+            self.ipv6_subordinates_active = None
+            self.ipv6_subordinates_standby = None
+            self.ipv6_subordinates_speak = None
+            self.ipv6_subordinates_listen = None
+            self.ipv6_subordinates_learn = None
+            self.ipv6_subordinates_init = None
             self.ipv6_virtual_ip_addresses_active_up = None
             self.ipv6_virtual_ip_addresses_active_down = None
             self.ipv6_virtual_ip_addresses_standby_up = None
@@ -4636,7 +4636,7 @@ class Hsrp(Entity):
             self._absolute_path = lambda: "Cisco-IOS-XR-ipv4-hsrp-oper:hsrp/%s" % self._segment_path()
 
         def __setattr__(self, name, value):
-            self._perform_setattr(Hsrp.Summary, ['ipv4_sessions_active', 'ipv4_sessions_standby', 'ipv4_sessions_speak', 'ipv4_sessions_listen', 'ipv4_sessions_learn', 'ipv4_sessions_init', 'ipv4_slaves_active', 'ipv4_slaves_standby', 'ipv4_slaves_speak', 'ipv4_slaves_listen', 'ipv4_slaves_learn', 'ipv4_slaves_init', 'ipv4_virtual_ip_addresses_active_up', 'ipv4_virtual_ip_addresses_active_down', 'ipv4_virtual_ip_addresses_standby_up', 'ipv4_virtual_ip_addresses_standby_down', 'ipv4_virtual_ip_addresses_speak_up', 'ipv4_virtual_ip_addresses_speak_down', 'ipv4_virtual_ip_addresses_listen_up', 'ipv4_virtual_ip_addresses_listen_down', 'ipv4_virtual_ip_addresses_learn_up', 'ipv4_virtual_ip_addresses_learn_down', 'ipv4_virtual_ip_addresses_init_up', 'ipv4_virtual_ip_addresses_init_down', 'ipv6_sessions_active', 'ipv6_sessions_standby', 'ipv6_sessions_speak', 'ipv6_sessions_listen', 'ipv6_sessions_learn', 'ipv6_sessions_init', 'ipv6_slaves_active', 'ipv6_slaves_standby', 'ipv6_slaves_speak', 'ipv6_slaves_listen', 'ipv6_slaves_learn', 'ipv6_slaves_init', 'ipv6_virtual_ip_addresses_active_up', 'ipv6_virtual_ip_addresses_active_down', 'ipv6_virtual_ip_addresses_standby_up', 'ipv6_virtual_ip_addresses_standby_down', 'ipv6_virtual_ip_addresses_speak_up', 'ipv6_virtual_ip_addresses_speak_down', 'ipv6_virtual_ip_addresses_listen_up', 'ipv6_virtual_ip_addresses_listen_down', 'ipv6_virtual_ip_addresses_learn_up', 'ipv6_virtual_ip_addresses_learn_down', 'ipv6_virtual_ip_addresses_init_up', 'ipv6_virtual_ip_addresses_init_down', 'interfaces_ipv4_state_up', 'interfaces_ipv4_state_down', 'tracked_interfaces_ipv4_state_up', 'tracked_interfaces_ipv4_state_down', 'tracked_objects_up', 'tracked_objects_down', 'interfaces_ipv6_state_up', 'interfaces_ipv6_state_down', 'tracked_interfaces_ipv6_state_up', 'tracked_interfaces_ipv6_state_down', 'bfd_sessions_up', 'bfd_sessions_down', 'bfd_session_inactive'], name, value)
+            self._perform_setattr(Hsrp.Summary, ['ipv4_sessions_active', 'ipv4_sessions_standby', 'ipv4_sessions_speak', 'ipv4_sessions_listen', 'ipv4_sessions_learn', 'ipv4_sessions_init', 'ipv4_subordinates_active', 'ipv4_subordinates_standby', 'ipv4_subordinates_speak', 'ipv4_subordinates_listen', 'ipv4_subordinates_learn', 'ipv4_subordinates_init', 'ipv4_virtual_ip_addresses_active_up', 'ipv4_virtual_ip_addresses_active_down', 'ipv4_virtual_ip_addresses_standby_up', 'ipv4_virtual_ip_addresses_standby_down', 'ipv4_virtual_ip_addresses_speak_up', 'ipv4_virtual_ip_addresses_speak_down', 'ipv4_virtual_ip_addresses_listen_up', 'ipv4_virtual_ip_addresses_listen_down', 'ipv4_virtual_ip_addresses_learn_up', 'ipv4_virtual_ip_addresses_learn_down', 'ipv4_virtual_ip_addresses_init_up', 'ipv4_virtual_ip_addresses_init_down', 'ipv6_sessions_active', 'ipv6_sessions_standby', 'ipv6_sessions_speak', 'ipv6_sessions_listen', 'ipv6_sessions_learn', 'ipv6_sessions_init', 'ipv6_subordinates_active', 'ipv6_subordinates_standby', 'ipv6_subordinates_speak', 'ipv6_subordinates_listen', 'ipv6_subordinates_learn', 'ipv6_subordinates_init', 'ipv6_virtual_ip_addresses_active_up', 'ipv6_virtual_ip_addresses_active_down', 'ipv6_virtual_ip_addresses_standby_up', 'ipv6_virtual_ip_addresses_standby_down', 'ipv6_virtual_ip_addresses_speak_up', 'ipv6_virtual_ip_addresses_speak_down', 'ipv6_virtual_ip_addresses_listen_up', 'ipv6_virtual_ip_addresses_listen_down', 'ipv6_virtual_ip_addresses_learn_up', 'ipv6_virtual_ip_addresses_learn_down', 'ipv6_virtual_ip_addresses_init_up', 'ipv6_virtual_ip_addresses_init_down', 'interfaces_ipv4_state_up', 'interfaces_ipv4_state_down', 'tracked_interfaces_ipv4_state_up', 'tracked_interfaces_ipv4_state_down', 'tracked_objects_up', 'tracked_objects_down', 'interfaces_ipv6_state_up', 'interfaces_ipv6_state_down', 'tracked_interfaces_ipv6_state_up', 'tracked_interfaces_ipv6_state_down', 'bfd_sessions_up', 'bfd_sessions_down', 'bfd_session_inactive'], name, value)
 
     def clone_ptr(self):
         self._top_entity = Hsrp()

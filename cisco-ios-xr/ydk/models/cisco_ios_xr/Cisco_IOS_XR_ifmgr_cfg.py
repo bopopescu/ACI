@@ -1536,20 +1536,20 @@ class InterfaceConfigurations(Entity):
             	Source IPv4 Address
             	**type**\:  :py:class:`SourceIpv4Address <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.SourceIpv4Address>`
             
-            .. attribute:: slaves
+            .. attribute:: subordinates
             
-            	Table for slave configuration
-            	**type**\:  :py:class:`Slaves <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves>`
+            	Table for subordinate configuration
+            	**type**\:  :py:class:`Subordinates <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates>`
             
             .. attribute:: sync_interval
             
             	Sync interval
             	**type**\:  :py:class:`SyncInterval <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.SyncInterval>`
             
-            .. attribute:: masters
+            .. attribute:: mains
             
-            	Table for master configuration
-            	**type**\:  :py:class:`Masters <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters>`
+            	Table for main configuration
+            	**type**\:  :py:class:`Mains <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains>`
             
             .. attribute:: communication
             
@@ -1741,7 +1741,7 @@ class InterfaceConfigurations(Entity):
                 self.is_top_level_class = False
                 self.has_list_ancestor = True
                 self.ylist_key_names = []
-                self._child_container_classes = OrderedDict([("source-ipv6-address", ("source_ipv6_address", InterfaceConfigurations.InterfaceConfiguration.Ptp.SourceIpv6Address)), ("announce-interval", ("announce_interval", InterfaceConfigurations.InterfaceConfiguration.Ptp.AnnounceInterval)), ("source-ipv4-address", ("source_ipv4_address", InterfaceConfigurations.InterfaceConfiguration.Ptp.SourceIpv4Address)), ("slaves", ("slaves", InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves)), ("sync-interval", ("sync_interval", InterfaceConfigurations.InterfaceConfiguration.Ptp.SyncInterval)), ("masters", ("masters", InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters)), ("communication", ("communication", InterfaceConfigurations.InterfaceConfiguration.Ptp.Communication)), ("delay-request-minimum-interval", ("delay_request_minimum_interval", InterfaceConfigurations.InterfaceConfiguration.Ptp.DelayRequestMinimumInterval))])
+                self._child_container_classes = OrderedDict([("source-ipv6-address", ("source_ipv6_address", InterfaceConfigurations.InterfaceConfiguration.Ptp.SourceIpv6Address)), ("announce-interval", ("announce_interval", InterfaceConfigurations.InterfaceConfiguration.Ptp.AnnounceInterval)), ("source-ipv4-address", ("source_ipv4_address", InterfaceConfigurations.InterfaceConfiguration.Ptp.SourceIpv4Address)), ("subordinates", ("subordinates", InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates)), ("sync-interval", ("sync_interval", InterfaceConfigurations.InterfaceConfiguration.Ptp.SyncInterval)), ("mains", ("mains", InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains)), ("communication", ("communication", InterfaceConfigurations.InterfaceConfiguration.Ptp.Communication)), ("delay-request-minimum-interval", ("delay_request_minimum_interval", InterfaceConfigurations.InterfaceConfiguration.Ptp.DelayRequestMinimumInterval))])
                 self._child_list_classes = OrderedDict([])
                 self._leafs = OrderedDict([
                     ('sync_grant_duration', YLeaf(YType.uint32, 'sync-grant-duration')),
@@ -1799,20 +1799,20 @@ class InterfaceConfigurations(Entity):
                 self._children_name_map["source_ipv4_address"] = "source-ipv4-address"
                 self._children_yang_names.add("source-ipv4-address")
 
-                self.slaves = InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves()
-                self.slaves.parent = self
-                self._children_name_map["slaves"] = "slaves"
-                self._children_yang_names.add("slaves")
+                self.subordinates = InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates()
+                self.subordinates.parent = self
+                self._children_name_map["subordinates"] = "subordinates"
+                self._children_yang_names.add("subordinates")
 
                 self.sync_interval = InterfaceConfigurations.InterfaceConfiguration.Ptp.SyncInterval()
                 self.sync_interval.parent = self
                 self._children_name_map["sync_interval"] = "sync-interval"
                 self._children_yang_names.add("sync-interval")
 
-                self.masters = InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters()
-                self.masters.parent = self
-                self._children_name_map["masters"] = "masters"
-                self._children_yang_names.add("masters")
+                self.mains = InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains()
+                self.mains.parent = self
+                self._children_name_map["mains"] = "mains"
+                self._children_yang_names.add("mains")
 
                 self.communication = InterfaceConfigurations.InterfaceConfiguration.Ptp.Communication()
                 self.communication.parent = self
@@ -1966,14 +1966,14 @@ class InterfaceConfigurations(Entity):
                     self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.SourceIpv4Address, ['enable', 'source_ip'], name, value)
 
 
-            class Slaves(Entity):
+            class Subordinates(Entity):
                 """
-                Table for slave configuration
+                Table for subordinate configuration
                 
-                .. attribute:: slave
+                .. attribute:: subordinate
                 
-                	Slave configuration
-                	**type**\: list of  		 :py:class:`Slave <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave>`
+                	Subordinate configuration
+                	**type**\: list of  		 :py:class:`Subordinate <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate>`
                 
                 
 
@@ -1983,42 +1983,42 @@ class InterfaceConfigurations(Entity):
                 _revision = '2017-02-02'
 
                 def __init__(self):
-                    super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves, self).__init__()
+                    super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates, self).__init__()
 
-                    self.yang_name = "slaves"
+                    self.yang_name = "subordinates"
                     self.yang_parent_name = "ptp"
                     self.is_top_level_class = False
                     self.has_list_ancestor = True
                     self.ylist_key_names = []
                     self._child_container_classes = OrderedDict([])
-                    self._child_list_classes = OrderedDict([("slave", ("slave", InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave))])
+                    self._child_list_classes = OrderedDict([("subordinate", ("subordinate", InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate))])
                     self._leafs = OrderedDict()
 
-                    self.slave = YList(self)
-                    self._segment_path = lambda: "slaves"
+                    self.subordinate = YList(self)
+                    self._segment_path = lambda: "subordinates"
 
                 def __setattr__(self, name, value):
-                    self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves, [], name, value)
+                    self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates, [], name, value)
 
 
-                class Slave(Entity):
+                class Subordinate(Entity):
                     """
-                    Slave configuration
+                    Subordinate configuration
                     
                     .. attribute:: transport  (key)
                     
-                    	Slave Transport Type
+                    	Subordinate Transport Type
                     	**type**\:  :py:class:`PtpEncap <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ptp_datatypes.PtpEncap>`
                     
                     .. attribute:: ethernet
                     
                     	ethernet
-                    	**type**\: list of  		 :py:class:`Ethernet <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave.Ethernet>`
+                    	**type**\: list of  		 :py:class:`Ethernet <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate.Ethernet>`
                     
                     .. attribute:: ipv4_or_ipv6
                     
                     	ipv4 or ipv6
-                    	**type**\: list of  		 :py:class:`Ipv4OrIpv6 <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave.Ipv4OrIpv6>`
+                    	**type**\: list of  		 :py:class:`Ipv4OrIpv6 <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate.Ipv4OrIpv6>`
                     
                     
 
@@ -2028,15 +2028,15 @@ class InterfaceConfigurations(Entity):
                     _revision = '2017-02-02'
 
                     def __init__(self):
-                        super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave, self).__init__()
+                        super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate, self).__init__()
 
-                        self.yang_name = "slave"
-                        self.yang_parent_name = "slaves"
+                        self.yang_name = "subordinate"
+                        self.yang_parent_name = "subordinates"
                         self.is_top_level_class = False
                         self.has_list_ancestor = True
                         self.ylist_key_names = ['transport']
                         self._child_container_classes = OrderedDict([])
-                        self._child_list_classes = OrderedDict([("ethernet", ("ethernet", InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave.Ethernet)), ("ipv4-or-ipv6", ("ipv4_or_ipv6", InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave.Ipv4OrIpv6))])
+                        self._child_list_classes = OrderedDict([("ethernet", ("ethernet", InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate.Ethernet)), ("ipv4-or-ipv6", ("ipv4_or_ipv6", InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate.Ipv4OrIpv6))])
                         self._leafs = OrderedDict([
                             ('transport', YLeaf(YType.enumeration, 'transport')),
                         ])
@@ -2044,19 +2044,19 @@ class InterfaceConfigurations(Entity):
 
                         self.ethernet = YList(self)
                         self.ipv4_or_ipv6 = YList(self)
-                        self._segment_path = lambda: "slave" + "[transport='" + str(self.transport) + "']"
+                        self._segment_path = lambda: "subordinate" + "[transport='" + str(self.transport) + "']"
 
                     def __setattr__(self, name, value):
-                        self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave, ['transport'], name, value)
+                        self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate, ['transport'], name, value)
 
 
                     class Ethernet(Entity):
                         """
                         ethernet
                         
-                        .. attribute:: slave_mac_address  (key)
+                        .. attribute:: subordinate_mac_address  (key)
                         
-                        	Slave MAC Address
+                        	Subordinate MAC Address
                         	**type**\: str
                         
                         	**pattern:** [0\-9a\-fA\-F]{2}(\:[0\-9a\-fA\-F]{2}){5}
@@ -2074,34 +2074,34 @@ class InterfaceConfigurations(Entity):
                         _revision = '2017-02-02'
 
                         def __init__(self):
-                            super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave.Ethernet, self).__init__()
+                            super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate.Ethernet, self).__init__()
 
                             self.yang_name = "ethernet"
-                            self.yang_parent_name = "slave"
+                            self.yang_parent_name = "subordinate"
                             self.is_top_level_class = False
                             self.has_list_ancestor = True
-                            self.ylist_key_names = ['slave_mac_address']
+                            self.ylist_key_names = ['subordinate_mac_address']
                             self._child_container_classes = OrderedDict([])
                             self._child_list_classes = OrderedDict([])
                             self._leafs = OrderedDict([
-                                ('slave_mac_address', YLeaf(YType.str, 'slave-mac-address')),
+                                ('subordinate_mac_address', YLeaf(YType.str, 'subordinate-mac-address')),
                                 ('non_negotiated', YLeaf(YType.boolean, 'non-negotiated')),
                             ])
-                            self.slave_mac_address = None
+                            self.subordinate_mac_address = None
                             self.non_negotiated = None
-                            self._segment_path = lambda: "ethernet" + "[slave-mac-address='" + str(self.slave_mac_address) + "']"
+                            self._segment_path = lambda: "ethernet" + "[subordinate-mac-address='" + str(self.subordinate_mac_address) + "']"
 
                         def __setattr__(self, name, value):
-                            self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave.Ethernet, ['slave_mac_address', 'non_negotiated'], name, value)
+                            self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate.Ethernet, ['subordinate_mac_address', 'non_negotiated'], name, value)
 
 
                     class Ipv4OrIpv6(Entity):
                         """
                         ipv4 or ipv6
                         
-                        .. attribute:: slave_ip_address  (key)
+                        .. attribute:: subordinate_ip_address  (key)
                         
-                        	Slave IP Address
+                        	Subordinate IP Address
                         	**type**\: union of the below types:
                         
                         		**type**\: str
@@ -2125,25 +2125,25 @@ class InterfaceConfigurations(Entity):
                         _revision = '2017-02-02'
 
                         def __init__(self):
-                            super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave.Ipv4OrIpv6, self).__init__()
+                            super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate.Ipv4OrIpv6, self).__init__()
 
                             self.yang_name = "ipv4-or-ipv6"
-                            self.yang_parent_name = "slave"
+                            self.yang_parent_name = "subordinate"
                             self.is_top_level_class = False
                             self.has_list_ancestor = True
-                            self.ylist_key_names = ['slave_ip_address']
+                            self.ylist_key_names = ['subordinate_ip_address']
                             self._child_container_classes = OrderedDict([])
                             self._child_list_classes = OrderedDict([])
                             self._leafs = OrderedDict([
-                                ('slave_ip_address', YLeaf(YType.str, 'slave-ip-address')),
+                                ('subordinate_ip_address', YLeaf(YType.str, 'subordinate-ip-address')),
                                 ('non_negotiated', YLeaf(YType.boolean, 'non-negotiated')),
                             ])
-                            self.slave_ip_address = None
+                            self.subordinate_ip_address = None
                             self.non_negotiated = None
-                            self._segment_path = lambda: "ipv4-or-ipv6" + "[slave-ip-address='" + str(self.slave_ip_address) + "']"
+                            self._segment_path = lambda: "ipv4-or-ipv6" + "[subordinate-ip-address='" + str(self.subordinate_ip_address) + "']"
 
                         def __setattr__(self, name, value):
-                            self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Slaves.Slave.Ipv4OrIpv6, ['slave_ip_address', 'non_negotiated'], name, value)
+                            self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Subordinates.Subordinate.Ipv4OrIpv6, ['subordinate_ip_address', 'non_negotiated'], name, value)
 
 
             class SyncInterval(Entity):
@@ -2193,14 +2193,14 @@ class InterfaceConfigurations(Entity):
                     self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.SyncInterval, ['time_type', 'time_period'], name, value)
 
 
-            class Masters(Entity):
+            class Mains(Entity):
                 """
-                Table for master configuration
+                Table for main configuration
                 
-                .. attribute:: master
+                .. attribute:: main
                 
-                	Master configuration
-                	**type**\: list of  		 :py:class:`Master <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master>`
+                	Main configuration
+                	**type**\: list of  		 :py:class:`Main <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main>`
                 
                 
 
@@ -2210,42 +2210,42 @@ class InterfaceConfigurations(Entity):
                 _revision = '2017-02-02'
 
                 def __init__(self):
-                    super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters, self).__init__()
+                    super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains, self).__init__()
 
-                    self.yang_name = "masters"
+                    self.yang_name = "mains"
                     self.yang_parent_name = "ptp"
                     self.is_top_level_class = False
                     self.has_list_ancestor = True
                     self.ylist_key_names = []
                     self._child_container_classes = OrderedDict([])
-                    self._child_list_classes = OrderedDict([("master", ("master", InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master))])
+                    self._child_list_classes = OrderedDict([("main", ("main", InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main))])
                     self._leafs = OrderedDict()
 
-                    self.master = YList(self)
-                    self._segment_path = lambda: "masters"
+                    self.main = YList(self)
+                    self._segment_path = lambda: "mains"
 
                 def __setattr__(self, name, value):
-                    self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters, [], name, value)
+                    self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains, [], name, value)
 
 
-                class Master(Entity):
+                class Main(Entity):
                     """
-                    Master configuration
+                    Main configuration
                     
                     .. attribute:: transport  (key)
                     
-                    	Master Transport Type
+                    	Main Transport Type
                     	**type**\:  :py:class:`PtpEncap <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ptp_datatypes.PtpEncap>`
                     
                     .. attribute:: ethernet
                     
                     	ethernet
-                    	**type**\: list of  		 :py:class:`Ethernet <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ethernet>`
+                    	**type**\: list of  		 :py:class:`Ethernet <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ethernet>`
                     
                     .. attribute:: ipv4_or_ipv6
                     
                     	ipv4 or ipv6
-                    	**type**\: list of  		 :py:class:`Ipv4OrIpv6 <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ipv4OrIpv6>`
+                    	**type**\: list of  		 :py:class:`Ipv4OrIpv6 <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ipv4OrIpv6>`
                     
                     
 
@@ -2255,15 +2255,15 @@ class InterfaceConfigurations(Entity):
                     _revision = '2017-02-02'
 
                     def __init__(self):
-                        super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master, self).__init__()
+                        super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main, self).__init__()
 
-                        self.yang_name = "master"
-                        self.yang_parent_name = "masters"
+                        self.yang_name = "main"
+                        self.yang_parent_name = "mains"
                         self.is_top_level_class = False
                         self.has_list_ancestor = True
                         self.ylist_key_names = ['transport']
                         self._child_container_classes = OrderedDict([])
-                        self._child_list_classes = OrderedDict([("ethernet", ("ethernet", InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ethernet)), ("ipv4-or-ipv6", ("ipv4_or_ipv6", InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ipv4OrIpv6))])
+                        self._child_list_classes = OrderedDict([("ethernet", ("ethernet", InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ethernet)), ("ipv4-or-ipv6", ("ipv4_or_ipv6", InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ipv4OrIpv6))])
                         self._leafs = OrderedDict([
                             ('transport', YLeaf(YType.enumeration, 'transport')),
                         ])
@@ -2271,33 +2271,33 @@ class InterfaceConfigurations(Entity):
 
                         self.ethernet = YList(self)
                         self.ipv4_or_ipv6 = YList(self)
-                        self._segment_path = lambda: "master" + "[transport='" + str(self.transport) + "']"
+                        self._segment_path = lambda: "main" + "[transport='" + str(self.transport) + "']"
 
                     def __setattr__(self, name, value):
-                        self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master, ['transport'], name, value)
+                        self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main, ['transport'], name, value)
 
 
                     class Ethernet(Entity):
                         """
                         ethernet
                         
-                        .. attribute:: master_mac_address  (key)
+                        .. attribute:: main_mac_address  (key)
                         
-                        	Master MAC Address \- only used if Transport is Ethernet
+                        	Main MAC Address \- only used if Transport is Ethernet
                         	**type**\: str
                         
                         	**pattern:** [0\-9a\-fA\-F]{2}(\:[0\-9a\-fA\-F]{2}){5}
                         
                         .. attribute:: delay_asymmetry
                         
-                        	The delay asymmetry for this master
-                        	**type**\:  :py:class:`DelayAsymmetry <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ethernet.DelayAsymmetry>`
+                        	The delay asymmetry for this main
+                        	**type**\:  :py:class:`DelayAsymmetry <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ethernet.DelayAsymmetry>`
                         
                         	**presence node**\: True
                         
-                        .. attribute:: master_clock_class
+                        .. attribute:: main_clock_class
                         
-                        	Master clock class
+                        	Main clock class
                         	**type**\: int
                         
                         	**range:** 0..255
@@ -2309,7 +2309,7 @@ class InterfaceConfigurations(Entity):
                         
                         .. attribute:: priority
                         
-                        	Master priority
+                        	Main priority
                         	**type**\: int
                         
                         	**range:** 0..255
@@ -2329,24 +2329,24 @@ class InterfaceConfigurations(Entity):
                         _revision = '2017-02-02'
 
                         def __init__(self):
-                            super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ethernet, self).__init__()
+                            super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ethernet, self).__init__()
 
                             self.yang_name = "ethernet"
-                            self.yang_parent_name = "master"
+                            self.yang_parent_name = "main"
                             self.is_top_level_class = False
                             self.has_list_ancestor = True
-                            self.ylist_key_names = ['master_mac_address']
-                            self._child_container_classes = OrderedDict([("delay-asymmetry", ("delay_asymmetry", InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ethernet.DelayAsymmetry))])
+                            self.ylist_key_names = ['main_mac_address']
+                            self._child_container_classes = OrderedDict([("delay-asymmetry", ("delay_asymmetry", InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ethernet.DelayAsymmetry))])
                             self._child_list_classes = OrderedDict([])
                             self._leafs = OrderedDict([
-                                ('master_mac_address', YLeaf(YType.str, 'master-mac-address')),
-                                ('master_clock_class', YLeaf(YType.uint32, 'master-clock-class')),
+                                ('main_mac_address', YLeaf(YType.str, 'main-mac-address')),
+                                ('main_clock_class', YLeaf(YType.uint32, 'main-clock-class')),
                                 ('non_negotiated', YLeaf(YType.boolean, 'non-negotiated')),
                                 ('priority', YLeaf(YType.uint32, 'priority')),
                                 ('communication', YLeaf(YType.enumeration, 'communication')),
                             ])
-                            self.master_mac_address = None
-                            self.master_clock_class = None
+                            self.main_mac_address = None
+                            self.main_clock_class = None
                             self.non_negotiated = None
                             self.priority = None
                             self.communication = None
@@ -2354,19 +2354,19 @@ class InterfaceConfigurations(Entity):
                             self.delay_asymmetry = None
                             self._children_name_map["delay_asymmetry"] = "delay-asymmetry"
                             self._children_yang_names.add("delay-asymmetry")
-                            self._segment_path = lambda: "ethernet" + "[master-mac-address='" + str(self.master_mac_address) + "']"
+                            self._segment_path = lambda: "ethernet" + "[main-mac-address='" + str(self.main_mac_address) + "']"
 
                         def __setattr__(self, name, value):
-                            self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ethernet, ['master_mac_address', 'master_clock_class', 'non_negotiated', 'priority', 'communication'], name, value)
+                            self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ethernet, ['main_mac_address', 'main_clock_class', 'non_negotiated', 'priority', 'communication'], name, value)
 
 
                         class DelayAsymmetry(Entity):
                             """
-                            The delay asymmetry for this master
+                            The delay asymmetry for this main
                             
                             .. attribute:: magnitude
                             
-                            	How much longer the master to slave path takes than the reverse
+                            	How much longer the main to subordinate path takes than the reverse
                             	**type**\: int
                             
                             	**range:** \-500000000..500000000
@@ -2390,7 +2390,7 @@ class InterfaceConfigurations(Entity):
                             _revision = '2017-02-02'
 
                             def __init__(self):
-                                super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ethernet.DelayAsymmetry, self).__init__()
+                                super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ethernet.DelayAsymmetry, self).__init__()
 
                                 self.yang_name = "delay-asymmetry"
                                 self.yang_parent_name = "ethernet"
@@ -2409,16 +2409,16 @@ class InterfaceConfigurations(Entity):
                                 self._segment_path = lambda: "delay-asymmetry"
 
                             def __setattr__(self, name, value):
-                                self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ethernet.DelayAsymmetry, ['magnitude', 'units'], name, value)
+                                self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ethernet.DelayAsymmetry, ['magnitude', 'units'], name, value)
 
 
                     class Ipv4OrIpv6(Entity):
                         """
                         ipv4 or ipv6
                         
-                        .. attribute:: master_ip_address  (key)
+                        .. attribute:: main_ip_address  (key)
                         
-                        	Master IP Address \- used if Transport is not Ethernet
+                        	Main IP Address \- used if Transport is not Ethernet
                         	**type**\: union of the below types:
                         
                         		**type**\: str
@@ -2431,14 +2431,14 @@ class InterfaceConfigurations(Entity):
                         
                         .. attribute:: delay_asymmetry
                         
-                        	The delay asymmetry for this master
-                        	**type**\:  :py:class:`DelayAsymmetry <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ipv4OrIpv6.DelayAsymmetry>`
+                        	The delay asymmetry for this main
+                        	**type**\:  :py:class:`DelayAsymmetry <ydk.models.cisco_ios_xr.Cisco_IOS_XR_ifmgr_cfg.InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ipv4OrIpv6.DelayAsymmetry>`
                         
                         	**presence node**\: True
                         
-                        .. attribute:: master_clock_class
+                        .. attribute:: main_clock_class
                         
-                        	Master clock class
+                        	Main clock class
                         	**type**\: int
                         
                         	**range:** 0..255
@@ -2450,7 +2450,7 @@ class InterfaceConfigurations(Entity):
                         
                         .. attribute:: priority
                         
-                        	Master priority
+                        	Main priority
                         	**type**\: int
                         
                         	**range:** 0..255
@@ -2470,24 +2470,24 @@ class InterfaceConfigurations(Entity):
                         _revision = '2017-02-02'
 
                         def __init__(self):
-                            super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ipv4OrIpv6, self).__init__()
+                            super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ipv4OrIpv6, self).__init__()
 
                             self.yang_name = "ipv4-or-ipv6"
-                            self.yang_parent_name = "master"
+                            self.yang_parent_name = "main"
                             self.is_top_level_class = False
                             self.has_list_ancestor = True
-                            self.ylist_key_names = ['master_ip_address']
-                            self._child_container_classes = OrderedDict([("delay-asymmetry", ("delay_asymmetry", InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ipv4OrIpv6.DelayAsymmetry))])
+                            self.ylist_key_names = ['main_ip_address']
+                            self._child_container_classes = OrderedDict([("delay-asymmetry", ("delay_asymmetry", InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ipv4OrIpv6.DelayAsymmetry))])
                             self._child_list_classes = OrderedDict([])
                             self._leafs = OrderedDict([
-                                ('master_ip_address', YLeaf(YType.str, 'master-ip-address')),
-                                ('master_clock_class', YLeaf(YType.uint32, 'master-clock-class')),
+                                ('main_ip_address', YLeaf(YType.str, 'main-ip-address')),
+                                ('main_clock_class', YLeaf(YType.uint32, 'main-clock-class')),
                                 ('non_negotiated', YLeaf(YType.boolean, 'non-negotiated')),
                                 ('priority', YLeaf(YType.uint32, 'priority')),
                                 ('communication', YLeaf(YType.enumeration, 'communication')),
                             ])
-                            self.master_ip_address = None
-                            self.master_clock_class = None
+                            self.main_ip_address = None
+                            self.main_clock_class = None
                             self.non_negotiated = None
                             self.priority = None
                             self.communication = None
@@ -2495,19 +2495,19 @@ class InterfaceConfigurations(Entity):
                             self.delay_asymmetry = None
                             self._children_name_map["delay_asymmetry"] = "delay-asymmetry"
                             self._children_yang_names.add("delay-asymmetry")
-                            self._segment_path = lambda: "ipv4-or-ipv6" + "[master-ip-address='" + str(self.master_ip_address) + "']"
+                            self._segment_path = lambda: "ipv4-or-ipv6" + "[main-ip-address='" + str(self.main_ip_address) + "']"
 
                         def __setattr__(self, name, value):
-                            self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ipv4OrIpv6, ['master_ip_address', 'master_clock_class', 'non_negotiated', 'priority', 'communication'], name, value)
+                            self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ipv4OrIpv6, ['main_ip_address', 'main_clock_class', 'non_negotiated', 'priority', 'communication'], name, value)
 
 
                         class DelayAsymmetry(Entity):
                             """
-                            The delay asymmetry for this master
+                            The delay asymmetry for this main
                             
                             .. attribute:: magnitude
                             
-                            	How much longer the master to slave path takes than the reverse
+                            	How much longer the main to subordinate path takes than the reverse
                             	**type**\: int
                             
                             	**range:** \-500000000..500000000
@@ -2531,7 +2531,7 @@ class InterfaceConfigurations(Entity):
                             _revision = '2017-02-02'
 
                             def __init__(self):
-                                super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ipv4OrIpv6.DelayAsymmetry, self).__init__()
+                                super(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ipv4OrIpv6.DelayAsymmetry, self).__init__()
 
                                 self.yang_name = "delay-asymmetry"
                                 self.yang_parent_name = "ipv4-or-ipv6"
@@ -2550,7 +2550,7 @@ class InterfaceConfigurations(Entity):
                                 self._segment_path = lambda: "delay-asymmetry"
 
                             def __setattr__(self, name, value):
-                                self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Masters.Master.Ipv4OrIpv6.DelayAsymmetry, ['magnitude', 'units'], name, value)
+                                self._perform_setattr(InterfaceConfigurations.InterfaceConfiguration.Ptp.Mains.Main.Ipv4OrIpv6.DelayAsymmetry, ['magnitude', 'units'], name, value)
 
 
             class Communication(Entity):
